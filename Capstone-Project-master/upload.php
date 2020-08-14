@@ -3,6 +3,7 @@ session_start();
 include'dbconnection.php';
 //Checking session is valid or not
 require_once('dbconfig/config.php');
+
 require('vendor/autoload.php');
 // this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
 $s3 = Aws\S3\S3Client::factory();
@@ -111,7 +112,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES
 ?>
 
 <?php } catch(Exception $e) { ?>
-<p>Upload error :(</p>
+<p>Upload error sad face:(</p>
 <?php } } ?>
 		
 <?php
