@@ -91,22 +91,23 @@ if(isset($_POST['upload']))
 <?php
 	//ensures that file is correctly selected
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name'])) {
-try {
-	//uploads file to amazon aws bucket
-$upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
-	//gets input field values and file link to upload to db
-$tmplink = $_FILES['userfile']['name'];
-$link = "https://ontario-shores.s3.amazonaws.com/" . $tmplink;
-	$album=$_POST['album'];
-	$filelink=$_POST['link'];
-	$patientid=$_POST['patientid'];
-	$tags=$_POST['tags'];
-	$type=$_POST['type'];
-	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags'");	
-	if($query)
-		{
-		echo "<script>alert('Media Added');</script>";
-		}
+
+  try {
+      //uploads file to amazon aws bucket
+      $upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+      //gets input field values and file link to upload to db
+      $tmplink = $_FILES['userfile']['name'];
+      $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
+        $album=$_POST['album'];
+        $filelink=$_POST['link'];
+        $patientid=$_POST['patientid'];
+        $tags=$_POST['tags'];
+        $type=$_POST['type'];
+        $query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags'");	
+        if($query)
+          {
+          echo "<script>alert('Media Added');</script>";
+          }
 ?>
 
 <?php } catch(Exception $e) { ?>

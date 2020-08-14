@@ -91,7 +91,7 @@ try {
 $upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
 	//gets input field values and file link to update db
 $tmplink = $_FILES['userfile']['name'];
-$link = "https://ontario-shores.s3.amazonaws.com/" . $tmplink;
+$link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$album=$_POST['album'];
 	$filelink=$_POST['link'];
 	$patientid=$_POST['patientid'];
