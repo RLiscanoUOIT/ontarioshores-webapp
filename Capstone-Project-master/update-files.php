@@ -120,7 +120,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 ?>
 
 <?php } catch(Exception $e) { ?>
-<p>Upload error sorry:(</p>
+<p>Upload error sorry update:(</p>
 <?php } } ?>
 		
 <?php
