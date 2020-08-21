@@ -132,7 +132,7 @@ if($_SESSION['login']!="1"){
 								  <!-- icons beside each patient -->
 									<a href="albumadmin.php?uid=<?php echo $row['id'];?>">
                                      <button class="btn btn-success btn-xs"><i class="fa fa-play" title="Play Media"></i></button></a>
-                                     <a href="./update-files.php?uid=<?php echo $row['id'];?>">
+                                     <a href="../update-files.php?uid=<?php echo $row['id'];?>">
                                      <button class="btn btn-primary btn-xs"><i class="fa fa-upload" title="Upload Files"></i></button></a>
 									 <a href="update-profile.php?uid=<?php echo $row['id'];?>">
                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" title="Edit Profile"></i></button></a>
