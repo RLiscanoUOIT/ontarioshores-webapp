@@ -122,7 +122,7 @@ if($_SESSION['login']!="1"){
 								  <!-- icons for each patient -->
 									<a href="albumsstaff.php?uid=<?php echo $row['id'];?>">
                                      <button class="btn btn-success btn-xs"><i class="fa fa-play" alt="Play Media" title="Play Media"></i></button></a>
-                                     <a href="https://shrouded-eyrie-19930.herokuapp.com/update-files_staff.php?uid=<?php echo $row['id'];?>">
+                                     <a href="http://shrouded-eyrie-19930.herokuapp.com/update-files_staff.php?uid=<?php echo $row['id'];?>">
                                      <button class="btn btn-primary btn-xs"><i class="fa fa-upload" alt="Upload Files" title="Upload Files"></i></button></a>
 									 <a href="update-profile.php?uid=<?php echo $row['id'];?>">
                                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" alt="Edit Profile" title="Edit Profile"></i></button></a>
