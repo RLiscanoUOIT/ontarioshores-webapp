@@ -1,8 +1,1 @@
-AuthUserFile /usr/local/etc/.htpasswd
-AuthName "Name of Secure Area"
-AuthType Basic
-<Limit GET POST>
-require valid-user
-
 DirectoryIndex frontpage.html
-</Limit>
