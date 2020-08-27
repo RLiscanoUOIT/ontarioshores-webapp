@@ -4,5 +4,5 @@ AuthType Basic
 <Limit GET POST>
 require valid-user
 
-DirectoryIndex index.shtml frontpage.html
+DirectoryIndex frontpage.html
 </Limit>
