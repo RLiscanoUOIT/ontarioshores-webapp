@@ -5,7 +5,12 @@ include'dbconnection.php';
 require_once('dbconfig/config.php');
 require('vendor/autoload.php');
 // this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
-$s3 = Aws\S3\S3Client::factory();
+//$s3 = Aws\S3\S3Client::factory();
+$s3 = new Aws\S3\S3Client([
+  'version' => 'latest',
+  'region'  => 'ca-canada-1'
+]);
+
 $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
 //ensures user is logged in
@@ -116,6 +121,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$_SESSION['pid']=$row['id'];
 	$tmpid=$row['id'];
 ?>
+
 <h3><i class="fa fa-angle-right"></i>Upload Media for <?php echo $row['fname']?> <?php echo $row['lname']?></h3>
 <p><?php echo $link ?><p>
 
