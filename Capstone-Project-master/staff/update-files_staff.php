@@ -9,7 +9,8 @@ require('vendor/autoload.php');
 $s3 = new Aws\S3\S3Client([
   'version' => 'latest',
   'region'  => 'ca-canada-1'
-]);$bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
+]);
+$bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
 //ensures user is logged in
 if($_SESSION['login']!="1"){
