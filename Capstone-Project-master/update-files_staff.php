@@ -8,10 +8,18 @@ require('vendor/autoload.php');
 
 //$s3 = Aws\S3\S3Client::factory();
 //aws php v3
-$s3 = new Aws\S3\S3Client([
-  'version' => 'latest',
-  'region'  => 'ca-canada-1'
-]);
+
+$IAM_KEY = 'AKIA5J2Q7BO35QB7WE74';
+$IAM_SECRET = '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';
+$s3 = new Aws\S3\S3Client(
+  array(
+    'credentials' => array(
+      'key' => $IAM_KEY,
+      'secret' => $IAM_SECRET
+    ),
+    'version' => 'latest',
+    'region'  => 'ca-central-1'
+  ));
 
 $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
