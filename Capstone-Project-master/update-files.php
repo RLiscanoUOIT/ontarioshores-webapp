@@ -13,15 +13,10 @@ use Aws\S3\ObjectUploader;
 
 try {
 //aws php v3
-$s3 = S3Client::factory(
-    array(
-        'version' => 'latest',
-        'region'  => 'ca-central-1', 
-        'credentials' => array(
-            'key'    => getenv('S3_KEY'),
-            'secret' => getenv('S3_SECRET'))
-        ),      
-);
+$s3 = new S3Client([ 
+    'version' => 'latest',
+    'region'  => 'ca-central-1']);     
+
 } catch (Exception $e) {
     // We use a die, so if this fails. It stops here. Typically this is a REST call so this would
     // return a json object.
@@ -132,12 +127,13 @@ try {
     //uploads file to Amazon AWS bucket
 //$upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
 $source=fopen($_FILES['userfile']['tmp_name'], 'rb');
-$upload =$s3->putObject(
-   // $s3,
-    $bucket,
-    $_FILES['userfile']['name'],
-    fopen($_FILES['userfile']['tmp_name'], 'rb'),
-    'public-read');
+$upload =$s3->putObject([
+    'Bucket' => $bucket,
+        'Key'    => $_FILES['userfile']['name'],
+        'Body'   => fopen($_FILES['userfile']['tmp_name'], 'rb'),
+        'ACL'    => 'public-read'
+]
+);
 
 //gets input field variables, and link of file in the bucket to upload to db
 $tmplink = $_FILES['userfile']['name'];
