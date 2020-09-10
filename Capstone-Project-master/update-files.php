@@ -107,11 +107,6 @@ if(isset($_POST['upload']))
        
 <?php
 
-$upload = new ObjectUploader(
-    $s3,
-    $bucket,
-    $_FILES['userfile']['name'],
-    fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
 
 	//checks is file is corrected selected
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name'])) {
