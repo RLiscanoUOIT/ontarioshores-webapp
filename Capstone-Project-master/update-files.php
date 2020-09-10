@@ -12,7 +12,7 @@ use Aws\Exception\AwsException;
 use Aws\S3\ObjectUploader;
 
 //aws php v3
-$s3 = S3Client([
+$s3 = new S3Client([
     'version' => 'latest',
     'region'  => 'ca-canada-1',
     //'credentials' => array(
