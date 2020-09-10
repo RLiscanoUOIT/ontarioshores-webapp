@@ -141,13 +141,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 		header( "Location: admin/manage-patients.php");
 ?>
 
-<?php } catch(MultipartUploadException $e) {
-    rewind($source);
-        $upload = new MultipartUploader($s3Client, $source, [
-            'state' => $e->getState(),
-        ]);
-     ?>
-
+<?php } catch(MultipartUploadException $e) { ?>
 <p>Upload error sorry update:(</p>
 <?php } } ?>
 		
