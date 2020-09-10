@@ -105,7 +105,10 @@ if(isset($_POST['upload']))
           <div class="col-md-12">
               <div class="content-panel">
        
+
+
 <?php
+
 $uploader = new ObjectUploader(
     $s3,
     $bucket,
@@ -117,11 +120,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES
 try {
     //uploads file to Amazon AWS bucket
 //$upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
-$upload=$uploader->upload();
+$result = $uploader->upload();
+        if ($result["@metadata"]["statusCode"] == '200') {
+            print('<p>File successfully uploaded to ' . $result["ObjectURL"] . '.</p>');
+        }print($result);
 
 //gets input field variables, and link of file in the bucket to upload to db
 $tmplink = $_FILES['userfile']['name'];
-$link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
+$link = "https://os-webapp1.s3.ca-central-1.amazonaws.com/" . $tmplink;
 	$album=$_POST['album'];
 	$filelink=$_POST['link'];
 	$patientid=$_POST['patientid'];
@@ -138,7 +144,11 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 
 <?php } catch(MultipartUploadException $e) { ?>
 <p>Upload error sorry update:(</p>
-<?php } } ?>
+<?php } rewind($source);
+        $uploader = new MultipartUploader($s3Client, $source, [
+            'state' => $e->getState(),
+        ]);
+} ?>
 		
 <?php
 		//added connection line at 5/31/2020
