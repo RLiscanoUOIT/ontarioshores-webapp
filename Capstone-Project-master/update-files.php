@@ -12,12 +12,12 @@ use Aws\Exception\AwsException;
 use Aws\S3\ObjectUploader;
 
 //aws php v3
-$s3 = new Aws\S3\S3Client([
+$s3 = S3Client([
     'version' => 'latest',
     'region'  => 'ca-canada-1',
-    'credentials' => array(
-        'key'    => getenv('S3_KEY'),
-        'secret' => getenv('S3_SECRET'))
+    //'credentials' => array(
+    //    'key'    => getenv('S3_KEY'),
+    //    'secret' => getenv('S3_SECRET'))
   ]);
 $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
@@ -121,7 +121,7 @@ $upload =$s3->putObject(
    // $s3,
     $bucket,
     $_FILES['userfile']['name'],
-    $source,
+    $_FILES['userfile']['name'],
     'public-read');
 
 //gets input field variables, and link of file in the bucket to upload to db
@@ -141,7 +141,7 @@ $link = "https://os-webapp1.s3.ca-central-1.amazonaws.com/" . $tmplink;
 		header( "Location: admin/manage-patients.php");
 ?>
 
-<?php } catch(MultipartUploadException $e) { ?>
+<?php } catch(S3Exception $e) { ?>
 <p>Upload error sorry update:(</p>
 <?php }} ?>
 		
