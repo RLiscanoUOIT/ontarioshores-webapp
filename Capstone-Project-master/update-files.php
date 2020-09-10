@@ -109,18 +109,20 @@ if(isset($_POST['upload']))
 
 <?php
 
-$uploader = new ObjectUploader(
-    $s3,
-    $bucket,
-    $_FILES['userfile']['name'],
-    fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+
 
 	//checks is file is corrected selected
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name'])) {
 try {
     //uploads file to Amazon AWS bucket
 //$upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
-$result = $uploader->upload();
+$uploader = new ObjectUploader(
+    $s3,
+    $bucket,
+    $_FILES['userfile']['name'],
+    fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+    
+    $result = $uploader->upload();
         if ($result["@metadata"]["statusCode"] == '200') {
             print('<p>File successfully uploaded to ' . $result["ObjectURL"] . '.</p>');
         }print($result);
