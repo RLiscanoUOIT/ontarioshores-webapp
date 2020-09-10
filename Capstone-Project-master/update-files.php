@@ -11,6 +11,7 @@ use Aws\S3\S3Client;
 use Aws\Exception\AwsException;
 use Aws\S3\ObjectUploader;
 
+try {
 //aws php v3
 $s3 = S3Client::factory(
     array(
@@ -21,6 +22,11 @@ $s3 = S3Client::factory(
             'secret' => getenv('S3_SECRET'))
         ),      
 );
+} catch (Exception $e) {
+    // We use a die, so if this fails. It stops here. Typically this is a REST call so this would
+    // return a json object.
+    die("Error: " . $e->getMessage());
+}
 //$s3 = new S3Client([
 //    'version' => 'latest',
 //    'region'  => 'ca-canada-1',
