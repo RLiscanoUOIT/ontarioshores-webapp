@@ -132,12 +132,12 @@ try {
     //uploads file to Amazon AWS bucket
 //$upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
 $source=fopen($_FILES['userfile']['tmp_name'], 'rb');
-$upload =$s3->putObject(array(
+$upload =$s3->putObject(
    // $s3,
     $bucket,
     $_FILES['userfile']['name'],
-    $_FILES['userfile']['name'],
-    'public-read'));
+    fopen($_FILES['userfile']['tmp_name'], 'rb'),
+    'public-read');
 
 //gets input field variables, and link of file in the bucket to upload to db
 $tmplink = $_FILES['userfile']['name'];
