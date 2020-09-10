@@ -15,7 +15,11 @@ try {
 //aws php v3
 $s3 = new S3Client([ 
     'version' => 'latest',
-    'region'  => 'ca-central-1']);     
+    'region'  => 'ca-central-1',
+    'credentials' => [
+        'key'    => getenv('S3_KEY'),
+        'secret' => getenv('S3_SECRET')]
+    ]);     
 
 } catch (Exception $e) {
     // We use a die, so if this fails. It stops here. Typically this is a REST call so this would
