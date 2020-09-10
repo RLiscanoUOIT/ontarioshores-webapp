@@ -109,18 +109,21 @@ if(isset($_POST['upload']))
 
 <?php
 
+$source=fopen($_FILES['userfile']['tmp_name'], 'rb');
 
+$uploader = new ObjectUploader(
+    $s3,
+    $bucket,
+    $_FILES['userfile']['name'],
+    $source,
+    'public-read');
 
 	//checks is file is corrected selected
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name'])) {
 try {
     //uploads file to Amazon AWS bucket
 //$upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
-$uploader = new ObjectUploader(
-    $s3,
-    $bucket,
-    $_FILES['userfile']['name'],
-    fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+
     
     $result = $uploader->upload();
         if ($result["@metadata"]["statusCode"] == '200') {
@@ -147,7 +150,7 @@ $link = "https://os-webapp1.s3.ca-central-1.amazonaws.com/" . $tmplink;
 <?php } catch(MultipartUploadException $e) { ?>
 <p>Upload error sorry update:(</p>
 <?php } rewind($source);
-        $uploader = new MultipartUploader($s3Client, $source, [
+        $uploader = new MultipartUploader($s3, $source, [
             'state' => $e->getState(),
         ]);
 } ?>
