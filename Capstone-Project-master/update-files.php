@@ -17,7 +17,7 @@ $s3 = new Aws\S3\S3Client([
     'region'  => 'ca-canada-1',
     'credentials' => array(
         'key'    => getenv('S3_KEY'),
-        'secret' => getenv('S3_SECRET'),
+        'secret' => getenv('S3_SECRET'))
   ]);
 $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
