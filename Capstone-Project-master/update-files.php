@@ -6,6 +6,11 @@ require_once('dbconfig/config.php');
 require('vendor/autoload.php');
 // this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
 //$s3 = Aws\S3\S3Client::factory();
+
+use Aws\S3\S3Client;
+use Aws\Exception\AwsException;
+use Aws\S3\ObjectUploader;
+
 //aws php v3
 $s3 = new Aws\S3\S3Client([
     'version' => 'latest',
@@ -101,13 +106,25 @@ if(isset($_POST['upload']))
               <div class="content-panel">
        
 <?php
-	
+
+$upload = new ObjectUploader(
+    $s3,
+    $bucket,
+    $_FILES['userfile']['name'],
+    fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+
 	//checks is file is corrected selected
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name'])) {
 try {
-	//uploads file to Amazon AWS bucket
-$upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
-	//gets input field variables, and link of file in the bucket to upload to db
+    //uploads file to Amazon AWS bucket
+//$upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+$upload = new ObjectUploader(
+    $s3,
+    $bucket,
+    $_FILES['userfile']['name'],
+    fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+
+//gets input field variables, and link of file in the bucket to upload to db
 $tmplink = $_FILES['userfile']['name'];
 $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$album=$_POST['album'];
@@ -124,7 +141,13 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 		header( "Location: admin/manage-patients.php");
 ?>
 
-<?php } catch(Exception $e) { ?>
+<?php } catch(MultipartUploadException $e) {
+    rewind($source);
+        $upload = new MultipartUploader($s3Client, $source, [
+            'state' => $e->getState(),
+        ]);
+     ?>
+
 <p>Upload error sorry update:(</p>
 <?php } } ?>
 		
