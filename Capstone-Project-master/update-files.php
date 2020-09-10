@@ -17,7 +17,7 @@ $s3 = new Aws\S3\S3Client([
     'region'  => 'ca-canada-1',
     'credentials' => array(
         'key'    => getenv('S3_KEY'),
-        'secret' => getenv('S3_SECRET')),
+        'secret' => getenv('S3_SECRET'),
   ]);
 $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
@@ -117,17 +117,12 @@ try {
     //uploads file to Amazon AWS bucket
 //$upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
 $source=fopen($_FILES['userfile']['tmp_name'], 'rb');
-$uploader = new ObjectUploader(
-    $s3,
+$upload =$s3->putObject(
+   // $s3,
     $bucket,
     $_FILES['userfile']['name'],
     $source,
     'public-read');
-    
-    $result = $uploader->upload();
-        if ($result["@metadata"]["statusCode"] == '200') {
-            print('<p>File successfully uploaded to ' . $result["ObjectURL"] . '.</p>');
-        }print($result);
 
 //gets input field variables, and link of file in the bucket to upload to db
 $tmplink = $_FILES['userfile']['name'];
@@ -148,11 +143,7 @@ $link = "https://os-webapp1.s3.ca-central-1.amazonaws.com/" . $tmplink;
 
 <?php } catch(MultipartUploadException $e) { ?>
 <p>Upload error sorry update:(</p>
-<?php } rewind($source);
-        $uploader = new MultipartUploader($s3, $source, [
-            'state' => $e->getState(),
-        ]);
-} ?>
+<?php }} ?>
 		
 <?php
 		//added connection line at 5/31/2020
