@@ -29,7 +29,7 @@ if($_SESSION['login']!="1"){
 					            else
 					            {
 											//$query_new=mysqli_query($con,"INSERT log_in set username='$username', password='$password', name='$name', email='$email', datejoined = 'CURRENT_TIMESTAMP', patientid='$pid', admin= 0, staff= 0,caregiver=1");
-                                            $sql_stmt = "INSERT INTO 'log_in' (username,password,name,email,date_joined,patient_id,admin,staff,caregiver) VALUES ($username, $password,$name,$email,CURRENT_TIMESTAMP, 0,0,1))";
+                                            $sql_stmt = "INSERT INTO 'log_in' (username,password,name,email,date_joined,patient_id,admin,staff,caregiver) VALUES ($username, $password,$name,$email,CURRENT_TIMESTAMP, 0,0,1)";
                                             $query_new=mysqli_query($con, $sql_stmt);
     
                                             if($query_new)
