@@ -7,9 +7,10 @@ if($_SESSION['login']!="1"){
 }
 				if(isset($_POST['submit']))
 				{
-					//gets input field values
-					$username=$_POST['username'];
-					$password=$_POST['password'];
+                    //gets input field values
+                    $name=$_POST['name'];
+                    $username=$_POST['username'];
+                    $password=$_POST['password'];
 					$email=$_POST['email'];
 					$cpassword=$_POST['cpassword'];
 					$pid=$_POST['patientid'];
@@ -17,7 +18,7 @@ if($_SESSION['login']!="1"){
 					        if($password==$cpassword)
 					        {
 					          //echo $query;
-					        $query_run=mysqli_query($con,"select * from caregiver where name='$username'");
+					        $query_run=mysqli_query($con,"select * from log_in where username='$username'");
 					        //echo mysql_num_rows($query_run);
 					        if($query_run)
 					          {
@@ -27,7 +28,7 @@ if($_SESSION['login']!="1"){
 					            }
 					            else
 					            {
-											$query_new=mysqli_query($con,"INSERT caregiver set name='$username', password='$password', email='$email', patientid='$pid'");
+											$query_new=mysqli_query($con,"INSERT log_in set name='$name', username='$username', password='$password', email='$email', patientid='$pid', admin= 'false', staff= 'false',caregiver='true'");
 							    				if($query_new)
 												{
 													echo '<script>alert("User Registered.. Welcome");</script>';
