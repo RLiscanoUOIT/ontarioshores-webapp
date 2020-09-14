@@ -28,7 +28,7 @@ if($_SESSION['login']!="1"){
 					            }
 					            else
 					            {
-											$query_new=mysqli_query($con,"INSERT log_in set name='$name', username='$username', password='$password', email='$email', patientid='$pid', admin= 'false', staff= 'false',caregiver='true'");
+											$query_new=mysqli_query($con,"INSERT log_in set name='$name', username='$username', password='$password', email='$email', patientid='$pid', admin= false, staff= false,caregiver=true");
 							    				if($query_new)
 												{
 													echo '<script>alert("User Registered.. Welcome");</script>';
