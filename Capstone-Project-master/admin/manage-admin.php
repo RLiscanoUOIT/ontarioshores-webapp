@@ -123,7 +123,7 @@ if($_SESSION['login']!="1"){
                                     <td><?php echo $row['username'];?></td>
                                     <td><?php echo $row['email'];?></td>
                                     <td>
-                                        <a href="manage-admin.php?id=<?php echo $row['id'];?>">
+                                        <a href="manage-admin.php?id=<?php echo $row['user_id'];?>">
                                         <button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><i class="fa fa-trash-o " title="Delete"></i></button></a>
                                     </td>
                                 </tr>
