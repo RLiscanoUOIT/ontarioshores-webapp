@@ -116,7 +116,7 @@ if($_SESSION['login']!="1"){
 							    $cnt=1;
 								  //loops for every user in db
 							    while($row=mysqli_fetch_array($ret))
-							    { if($row=get_value($con,"SELECT admin FROM log_in")==1){ ?>
+							    { if($row['admin']==1){ ?>
                                 <tr>
                                     <td><?php echo $cnt;?></td>
                                     <php>
