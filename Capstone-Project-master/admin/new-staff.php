@@ -15,7 +15,7 @@ if($_SESSION['login']!="1"){
 					        if($password==$cpassword)
 					        {
 					          //echo $query;
-					        $query_run=mysqli_query($con,"select * from staff where name='$username'");
+					        $query_run=mysqli_query($con,"select * from log_in where username='$username'");
 					        //echo mysql_num_rows($query_run);
 					        if($query_run)
 					          {
@@ -25,8 +25,8 @@ if($_SESSION['login']!="1"){
 					            }
 					            else
 					            {
-												$query_new=mysqli_query($con,"INSERT staff set name='$username', password='$password', email='$email', datejoined = 'CURRENT_TIMESTAMP'");
-												if($query_new)
+                                    $query_new=mysqli_query($con,"INSERT log_in set username='$username', password='$password', name= 'angela',email='$email',date_joined = 'CURRENT_TIMESTAMP', patientid='0', admin=0,staff=1,caregiver=0");
+                                    if($query_new)
 												{
 													echo '<script>alert("User Registered.. Welcome");</script>';
 												}
