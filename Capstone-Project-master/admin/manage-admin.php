@@ -10,7 +10,7 @@ if($_SESSION['login']!="1"){
 	if(isset($_GET['id']))
 	{
 	$userid=$_GET['id'];
-	$msg=mysqli_query($con,"delete from admin where id='$userid'");
+	$msg=mysqli_query($con,"delete from log_in where id='$userid'");
 		if($msg)
 		{
 		echo "<script>alert('Admin data deleted');</script>";
@@ -112,13 +112,14 @@ if($_SESSION['login']!="1"){
                               <tbody>
                               <?php 
 				      //pulls all of the admin users in db
-				     		 $ret=mysqli_query($con,"select * from admin");
+				     		 $ret=mysqli_query($con,"select * from log_in");
 							  $cnt=1;
 								  //loops for every user in db
 							  while($row=mysqli_fetch_array($ret))
-							  {?>
+							  { if($row=get_value($mysqli,"SELECT admin FROM log_in")=1){ ?>
                               <tr>
                               <td><?php echo $cnt;?></td>
+                    
                                   <td><?php echo $row['name'];?></td>
                                  <td><?php echo $row['email'];?></td>
                                   <td>
@@ -126,7 +127,7 @@ if($_SESSION['login']!="1"){
                                      <button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><i class="fa fa-trash-o " title="Delete"></i></button></a>
                                   </td>
                               </tr>
-                              <?php $cnt=$cnt+1; }?>
+                              <?php $cnt=$cnt+1; }}?>
 
                               </tbody>
                           </table>
