@@ -122,7 +122,7 @@ if($_SESSION['login']!="1"){
       </aside>
 	  <?php $ret=mysqli_query($con,"select * from patient where id='".$_GET['uid']."'");
 	  $row=mysqli_fetch_array($ret);
-	  $patient_id=$row['id'];
+	  $pid=$row['id'];
 	  ?>
 
       <section id="main-content">
@@ -163,7 +163,7 @@ if($_SESSION['login']!="1"){
                                   <input type="password" placeholder="Enter Password" class="form-control" name="cpassword" required >
                               </div>
                           </div>
-				   <input type="hidden" name="patient_id" value="<?php echo $patient_id?>">
+				   <input type="hidden" name="patient_id" value="<?php echo $pid?>">
 
 
 									<div class="form-group">
