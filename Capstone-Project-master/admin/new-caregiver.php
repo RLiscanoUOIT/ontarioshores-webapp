@@ -13,7 +13,7 @@ if($_SESSION['login']!="1"){
                     $password=$_POST['password'];
 					$email=$_POST['email'];
 					$cpassword=$_POST['cpassword'];
-					$pid=$_POST['patientid'];
+					$pid=$_POST['patient_id'];
 	//ensures password is same as confirmed password
 					        if($password==$cpassword)
 					        {
@@ -29,7 +29,7 @@ if($_SESSION['login']!="1"){
 					            else
 					            {
 											//$query_new=mysqli_query($con,"INSERT log_in set username='$username', password='$password', name='$name', email='$email', datejoined = 'CURRENT_TIMESTAMP', patientid='$pid', admin= 0, staff= 0,caregiver=1");
-                                            $sql_stmt = "INSERT INTO 'log_in' (username,password,name,email,date_joined,patient_id,admin,staff,caregiver) VALUES ($username, $password,$name,$email,CURRENT_TIMESTAMP, 0,0,1)";
+                                            $sql_stmt = "INSERT INTO 'log_in' (username,password,name,email,date_joined,patient_id,admin,staff,caregiver) VALUES ($username, $password,$name,$email,CURRENT_TIMESTAMP,$pid, 0,0,1)";
                                             $query_new=mysqli_query($con, $sql_stmt);
     
                                             if($query_new)
@@ -122,7 +122,7 @@ if($_SESSION['login']!="1"){
       </aside>
 	  <?php $ret=mysqli_query($con,"select * from patient where id='".$_GET['uid']."'");
 	  $row=mysqli_fetch_array($ret);
-	  $patientid=$row['id'];
+	  $patient_id=$row['id'];
 	  ?>
 
       <section id="main-content">
@@ -163,7 +163,7 @@ if($_SESSION['login']!="1"){
                                   <input type="password" placeholder="Enter Password" class="form-control" name="cpassword" required >
                               </div>
                           </div>
-				   <input type="hidden" name="patientid" value="<?php echo $patientid?>">
+				   <input type="hidden" name="patient_id" value="<?php echo $patient_id?>">
 
 
 									<div class="form-group">
