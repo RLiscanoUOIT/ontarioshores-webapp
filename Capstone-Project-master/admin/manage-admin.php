@@ -10,7 +10,7 @@ if($_SESSION['login']!="1"){
 	if(isset($_GET['id']))
 	{
 	$userid=$_GET['id'];
-	$msg=mysqli_query($con,"delete from log_in where id='$userid'");
+	$msg=mysqli_query($con,"delete from log_in where user_id='$userid'");
 		if($msg)
 		{
 		echo "<script>alert('Admin data deleted');</script>";
@@ -120,7 +120,7 @@ if($_SESSION['login']!="1"){
                                 <tr>
                                     <td><?php echo $cnt;?></td>
                                     <php>
-                                    <td><?php echo $row['name'];?></td>
+                                    <td><?php echo $row['username'];?></td>
                                     <td><?php echo $row['email'];?></td>
                                     <td>
                                         <a href="manage-admin.php?id=<?php echo $row['id'];?>">
