@@ -17,7 +17,7 @@ if($_SESSION['login']!="1"){
 					        if($password==$cpassword)
 					        {
 					          //echo $query;
-					        $query_run=mysqli_query($con,"select * from log_in where name='$username'");
+					        $query_run=mysqli_query($con,"select * from log_in where username='$username'");
 					        //echo mysql_num_rows($query_run);
 					        if($query_run)
 					          {
