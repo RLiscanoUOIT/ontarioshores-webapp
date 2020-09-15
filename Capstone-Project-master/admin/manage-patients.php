@@ -10,7 +10,7 @@ if($_SESSION['login']!="1"){
 	{
 	$userid=$_GET['id'];
 //has to delete all caregivers associated to patient, media, and patient 
-	$caregiverdelete=mysqli_query($con,"delete from caregiver where patientid='$userid'");
+	$caregiverdelete=mysqli_query($con,"delete from log_in where patientid='$userid'");
 	$mediadelete=mysqli_query($con,"delete from new_media where patientid='$userid'");
 	$msg=mysqli_query($con,"delete from patient where id='$userid'");
 		if($msg && $caregiverdelete && $mediadelete)

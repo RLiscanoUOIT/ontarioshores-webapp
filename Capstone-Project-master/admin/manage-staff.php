@@ -10,7 +10,7 @@ if($_SESSION['login']!="1"){
 	if(isset($_GET['id']))
 	{
 	$userid=$_GET['id'];
-	$msg=mysqli_query($con,"delete from staff where id='$userid'");
+	$msg=mysqli_query($con,"delete from log_in where user_id='$userid'");
 		if($msg)
 		{
 		echo "<script>alert('Staff data deleted');</script>";
@@ -111,22 +111,22 @@ if($_SESSION['login']!="1"){
                               <tbody>
                               <?php 
 				      //searchs db for all staff users
-				      $ret=mysqli_query($con,"select * from staff");
+				      $ret=mysqli_query($con,"select * from log_in");
 							  $cnt=1;
 				      //loops through every result
 							  while($row=mysqli_fetch_array($ret))
-							  {?>
+							  { if($row['staff']==1){?>
                               <tr>
                               <td><?php echo $cnt;?></td>
-                                  <td><?php echo $row['name'];?></td>
+                                  <td><?php echo $row['username'];?></td>
                                  <td><?php echo $row['email'];?></td>
                                   <td>
 					  <!-- side icons -->
-                                     <a href="manage-staff.php?id=<?php echo $row['id'];?>">
+                                     <a href="manage-staff.php?id=<?php echo $row['user_id'];?>">
                                      <button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><i class="fa fa-trash-o " title="Delete"></i></button></a>
                                   </td>
                               </tr>
-                              <?php $cnt=$cnt+1; }?>
+                              <?php $cnt=$cnt+1; }}?>
 
                               </tbody>
                           </table>
