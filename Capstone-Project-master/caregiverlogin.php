@@ -32,7 +32,7 @@
 					{
 					$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
 					//assign session values
-					$_SESSION['name'] = $username;
+					$_SESSION['username'] = $username;
 					$_SESSION['password'] = $password;
 					$_SESSION['login'] = "1";
 					//$_SESSION['pid'] = $row['patientid'];
@@ -52,8 +52,8 @@
 					}
 					else
 					{
-						//in case of incorrect credentials
-						echo '<script type="text/javascript">alert("you did a nono")</script>';
+						//in case theres no permissions attatched
+						echo '<script type="text/javascript">alert("User does not have any permissions.")</script>';
 					}
 
 				}

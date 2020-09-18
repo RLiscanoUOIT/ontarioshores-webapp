@@ -21,7 +21,7 @@ session_start();
                 </div>
             </div>
             <!--Staff login button-->
-			<div class="row justify-content-center">
+<!-- 			<div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6">
 								 <a style="text-decoration:none; color:black" href="<?php echo "staff/stafflogin.php"; ?>">
                     <div class="single_service">
@@ -36,10 +36,10 @@ session_start();
                          </div>
                     </div></a>
 					
-                </div>
+                </div> -->
 				
 		<!--Admin login button-->
-                <div class="col-lg-4 col-md-6">
+               <!--  <div class="col-lg-4 col-md-6">
                                  <a style="text-decoration:none; color:black" href="<?php echo "admin/adminlogin.php"; ?>">
                     <div class="single_service active">
                          <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
@@ -54,7 +54,7 @@ session_start();
                     </div>
 					 				 </a>
 
-                </div>
+                </div> -->
 			
 		<!--Caregiver login button-->
                 <div class="col-lg-4 col-md-6">
@@ -67,7 +67,7 @@ session_start();
                              </div>
                          </div>
                          <div class="service_content text-center">
-                            <h3>CAREGIVER</h3>
+                            <h3>Log-in</h3>
                          </div>
                     </div>
 			</a>
