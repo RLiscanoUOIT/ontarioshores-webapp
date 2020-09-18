@@ -39,14 +39,18 @@
 					
 					//take user to upload page
 					if($row['caregiver']==1){
-					header( "Location: upload.php");
-					echo '<script type="text/javascript">alert("Database Worked")</script>';
+						$_SESSION['pid'] = $row['patientid'];
+						header( "Location: upload.php");
+						echo '<script type="text/javascript">alert("Database Worked")</script>';
 					}
 					else if($row['admin']==1){
-						echo '<script type="text/javascript">alert("Link admin here")</script>';
+						header( "Location: admin/manage-patients.php");
+						echo '<script type="text/javascript">alert("Database Worked")</script>';
+					}else if($row['staff']==1){
+						header( "Location: staff/manage-patients.php");
+						echo '<script type="text/javascript">alert("Database Worked")</script>';
 					}
 
-					}
 					else
 					{
 						//in case of incorrect credentials
