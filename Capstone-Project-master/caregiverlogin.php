@@ -35,7 +35,7 @@
 					$_SESSION['name'] = $username;
 					$_SESSION['password'] = $password;
 					$_SESSION['login'] = "1";
-					$_SESSION['pid'] = $row['patientid'];
+					//$_SESSION['pid'] = $row['patientid'];
 					
 					//take user to upload page
 					if($row['caregiver']==1){
@@ -50,6 +50,13 @@
 						header( "Location: staff/manage-patients.php");
 						echo '<script type="text/javascript">alert("Database Worked")</script>';
 					}
+					else
+					{
+						//in case of incorrect credentials
+						echo '<script type="text/javascript">alert("you did a nono")</script>';
+					}
+
+				}
 
 					else
 					{
