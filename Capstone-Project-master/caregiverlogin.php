@@ -21,10 +21,10 @@
 				//gets username and password from input fields for a SQL query
 				@$username=$_POST['username'];
 				@$password=$_POST['password'];
-				$query = "select * from caregiver where name='$username' and password='$password' ";
+				$query = "select * from log_in where username='$username' and password='$password' ";
 				$query_run = mysqli_query($con,$query);
 				//if name and password exists, enter if statement
-				if($query_run)
+				if($query_run && $query_run['caregiver']==1)
 				{
 					//if there is more than 0 rows, enter if statement
 					if(mysqli_num_rows($query_run)>0)
