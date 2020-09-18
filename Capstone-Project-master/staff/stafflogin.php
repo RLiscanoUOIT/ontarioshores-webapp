@@ -23,9 +23,8 @@ if(isset($_POST['login']))
 	//gets info from input fields
 				@$username=$_POST['username'];
 				@$password=$_POST['password'];
-				$caregiver=1;
 	//searchs db for matching username and password
-				$query = "select * from staff where name='$username, password='$password', caregiver=$caregiver";
+				$query = "select * from staff where name='$username and password='$password'";
 				//echo $query;
 				$query_run = mysqli_query($con,$query);
 				//echo mysql_num_rows($query_run);
