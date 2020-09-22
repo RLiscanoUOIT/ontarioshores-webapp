@@ -7,5 +7,5 @@ session_unset();
 $_SESSION['action1']="You have logged out successfully..!";
 ?>
 <script language="javascript">
-document.location="caregiverlogin.php";
+document.location="log-in.php";
 </script>
