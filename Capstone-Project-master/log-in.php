@@ -7,7 +7,6 @@
 <head>
 <title>Login Page</title>
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body style="background-color:#bdc3c7">
 	<div id="main-wrapper">
