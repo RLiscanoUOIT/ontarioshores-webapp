@@ -131,12 +131,6 @@ if($_SESSION['login']!="1"){
                                   <td>
 								  <!-- icons beside each patient -->
 									<a href="albumadmin.php?uid=<?php echo $row['id'];?>">
-                                     <button class="btn btn-success btn-xs"><i class="fa fa-play" title="Play Media"></i></button></a>
-                                     <a href="http://shrouded-eyrie-19930.herokuapp.com/update-files.php?uid=<?php echo $row['id'];?>">
-                                     <button class="btn btn-primary btn-xs"><i class="fa fa-upload" title="Upload Files"></i></button></a>
-									 <a href="update-profile.php?uid=<?php echo $row['id'];?>">
-                                     <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" title="Edit Profile"></i></button></a>
-									 <a href="new-caregiver.php?uid=<?php echo $row['id'];?>">
                                      <button class="btn btn-primary btn-xs"><i class="fa fa-plus" title="Add Caregiver"></i></button></a>
                                      <a href="manage-patients.php?id=<?php echo $row['id'];?>">
                                      <button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><i class="fa fa-trash-o " title="Delete"></i></button></a>
