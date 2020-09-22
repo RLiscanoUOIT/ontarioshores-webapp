@@ -56,7 +56,8 @@ session_start();
 
                 </div> -->
 			
-		<!--Caregiver login button-->
+        <!--Caregiver login button-->
+                <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-10">
                                  <a style="text-decoration:none; color:black" href="<?php echo "log-in.php"; ?>">
                     <div class="single_service">

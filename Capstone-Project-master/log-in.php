@@ -10,7 +10,7 @@
 </head>
 <body style="background-color:#bdc3c7">
 	<div id="main-wrapper">
-	<center><h2>Welcome to Reminiscence Web Application</h2></center>
+	<center><h2>Welcome, please log-in</h2></center>
 			<div class="imgcontainer">
 				<img src="logo100.png" alt="Avatar" class="avatar">
 			</div>
