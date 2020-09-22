@@ -8,6 +8,15 @@ font-family: "Open Sans", sans-serif;
 font-weight: normal;
 font-style: normal;
 }
+h3{
+	font-weight: 700;
+	margin-top: -200px;
+	line-height: 60px;
+	color: #191d34;
+	font-family: "Open Sans", sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
 
 input{
     width: 430px;
