@@ -32,6 +32,14 @@ input{
 	border: 3px solid #f1f1f1;
 	width: 500px;
 	margin: 0 auto;
+	font-size: 150px;
+	font-weight: 700;
+	margin-top: 100px;
+	line-height: 60px;
+	color: #191d34;
+	font-family: "Open Sans", sans-serif;
+	font-weight: normal;
+	font-style: normal;
 }
 .inner_container{
 	width:450px;
