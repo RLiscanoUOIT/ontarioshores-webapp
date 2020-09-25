@@ -83,12 +83,6 @@ if($_SESSION['login']!="1"){
                           <span>Manage Admin</span>
                       </a>
                   </li>
-                  <!-- <li class="sub-menu">
-                      <a href="permissions.php" >
-                          <i class="fa fa-users"></i>
-                          <span>Manage Permissions</span>
-                      </a>
-                  </li> -->
               </ul>
           </div>
       </aside>
