@@ -1,9 +1,9 @@
 <?php
 session_start();
-include'dbconnection.php';
+include'../dbconnection.php';
 //Checking session is valid or not
-require_once('dbconfig/config.php');
-require('vendor/autoload.php');
+require_once('../dbconfig/config.php');
+require('../vendor/autoload.php');
 // this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
 //aws php v3
 $s3 = new Aws\S3\S3Client([
@@ -34,10 +34,10 @@ if(isset($_POST['upload']))
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
     <title>Staff | Upload Media</title>
-    <link href="admin/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="admin/assets/css/style.css" rel="stylesheet">
-    <link href="admin/assets/css/style-responsive.css" rel="stylesheet">
+    <link href="../admin/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../admin/assets/css/style.css" rel="stylesheet">
+    <link href="../admin/assets/css/style-responsive.css" rel="stylesheet">
   </head>
 
   <body>
@@ -57,7 +57,7 @@ if(isset($_POST['upload']))
 	  <!-- logout button -->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="admin/logout.php">Logout</a></li>
+                    <li><a class="logout" href="../log-in.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -66,7 +66,7 @@ if(isset($_POST['upload']))
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="#"><img src="admin/assets/img/logo100.png" width="125"></a></p>
+              	  <p class="centered"><a href="#"><img src="../admin/assets/img/logo100.png" width="125"></a></p>
               	 
                   <li class="sub-menu">
                       <a href="manage-patients.php" >
@@ -113,7 +113,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
     echo $privacy;
 		}
 	
-		header( "Location: staff/manage-patients.php");
+		header( "Location: ../staff/manage-patients.php");
 ?>
 
 <?php } catch(Exception $e) { ?>
