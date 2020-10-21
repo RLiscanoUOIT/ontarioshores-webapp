@@ -107,7 +107,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$tags=$_POST['tags'];
   $type=$_POST['type'];
   $privacy='patient';
-	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags', privacy='private'");	
+	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags', privacy='patient'");	
 	if($query)
 		{
     echo "<script>alert('Media Added');</script>";
