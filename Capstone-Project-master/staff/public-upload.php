@@ -103,7 +103,7 @@ $tmplink = $_FILES['userfile']['name'];
 $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$album=$_POST['album'];
 	$filelink=$_POST['link'];
-	$patientid=0;
+	$patientid=$_POST['patientid'];
 	$tags=$_POST['tags'];
   $type=$_POST['type'];
 	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='0', album='$album', tags='$tags',privacy='public'");	
@@ -114,6 +114,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	
 		header( "Location: ../staff/public-album.php");
 ?>
+
 
 <?php } catch(Exception $e) { ?>
 <p>Upload error i cri:(</p>
