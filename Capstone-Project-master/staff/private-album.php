@@ -9,6 +9,17 @@ if($_SESSION['login']!="1"){
 
 ?>
 
+//get patient name and info from db
+<?php
+    $connect = mysqli_connect("us-cdbr-iron-east-04.cleardb.net", "bc9da719e482f3", "deea7ef6", "heroku_dbefbfd5b04ac35");
+    $profile = $_GET['uid'];
+    $query = "SELECT fname FROM patient WHERE id='$profile'";
+    $result = mysqli_query($connect, $query);
+    $value = mysqli_fetch_assoc($result);
+    $valuefname = $value['fname'];
+    $valuelname = $value['lname'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,27 +81,18 @@ if($_SESSION['login']!="1"){
       </aside>
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Public Albums</h3>
+          	<h3><i class="fa fa-angle-right"></i> Patient Albums</h3>
 				<div class="row">
                   <div class="col-md-12">
                       <div class="content-panel">
                           <table class="table table-striped table-advance table-hover">
-	                  	  	  <h4><i class="fa fa-angle-right"></i> Album Collection </h4>
+	                  	  	  <h4> <?php echo ucfirst($valuefname). " ". ucfirst($valuelname). "'s "; ?> Album Collection </h4>
 							  <ul class="nav pull-right top-menu">
                     <li><a class="logout" href="new-patient.php" style="margin-top:-35px";>Upload Media</a></li>
             	              </ul>
                           </table>
-                           <?php
-                                $connect = mysqli_connect("us-cdbr-iron-east-04.cleardb.net", "bc9da719e482f3", "deea7ef6", "heroku_dbefbfd5b04ac35");
-                                $profile = $_GET['uid'];
-                                $query = "SELECT fname FROM patient WHERE id='$profile'";
-                                $result = mysqli_query($connect, $query);
-                                $value = mysqli_fetch_assoc($result);
-                                $valuefname = $value['fname'];
-                                $valuelname = $value['lname'];
-                                ?>
+                          
                             <div class="w3-container w3-padding-32" id="projects">
-                                <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Albums in Patient Profile: <?php echo ucfirst($valuestr); ?></h3>
                                 <button onclick="location.href='albumdeletestaff.php?profileid=<?php echo $profile ?>'" class="w3-button w3-right w3-red">Delete Albums</button>
                             </div>
                             <div class="grid-container">
