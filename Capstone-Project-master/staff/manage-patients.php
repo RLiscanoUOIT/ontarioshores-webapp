@@ -77,7 +77,7 @@ if($_SESSION['login']!="1"){
                   </li>
                   <li class="sub-menu">
                       <a href="public-album.php" >
-                          <i class="fa fa-images"></i>
+                          <i class="fa fa-image"></i>
                           <span>Public Album</span>
                       </a>
 
