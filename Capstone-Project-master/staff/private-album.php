@@ -113,19 +113,17 @@ if($_SESSION['login']!="1"){
                                 $opt .= "
                                 <div class='row'>
                                 <div class='col-sm-6'>
-                                <div class='card w-auto' style='width: 18rem;'>
+                                <div class='card w-auto>
+                                <a href='albumgallery.php?profileid=$profile&albumname=$item'>
                                 <div class='card-body'>
                                     <h5 class='card-title'>$item</h5>
                                     <img src='$urlstr' alt='...' class='img-thumbnail'>
-                                    <a href='albumgallery.php?profileid=$profile&albumname=$item'>\
-                                    
                                     <a href='#' class='btn btn-primary'>Delete Album</a>
                                     </div>
                                     </div>
                                     </div>";
                                 }
                             ?>
-
                             <?php echo $opt ?>
                             </div>
                             
