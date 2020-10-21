@@ -14,7 +14,7 @@ $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!'
 
 //ensures user is logged in
 if($_SESSION['login']!="1"){
-	header( "Location: staff/stafflogin.php");
+	header( "Location: log-in.php");
 }
 
 // for updating user info

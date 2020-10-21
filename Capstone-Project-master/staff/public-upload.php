@@ -106,13 +106,13 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$patientid=0;
 	$tags=$_POST['tags'];
   $type=$_POST['type'];
-	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags',privacy='public'");	
+	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='0', album='$album', tags='$tags',privacy='public'");	
 	if($query)
 		{
 		echo "<script>alert('Media Added');</script>";
 		}
 	
-		header( "Location: staff/public-album.php");
+		header( "Location: ../staff/public-album.php");
 ?>
 
 <?php } catch(Exception $e) { ?>
@@ -134,7 +134,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
   <input type="radio" id="audio" name="type" value="audio">
   <label for="audio">Audio</label><br>
 <input type="hidden" id="link" name="link" value="<?php echo $link ?>">
-<input type="hidden" id="patientid" name="patientid" value="<?php echo $tmpid?>">
+<input type="hidden" id="patientid" name="patientid" value='0'>
   <input name="userfile" type="file"><br><br>
     <input type="submit" name="upload" value="Upload">
 </form>
