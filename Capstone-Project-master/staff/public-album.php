@@ -33,7 +33,7 @@ if($_SESSION['login']!="1"){
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Staff | Manage Patients</title>
+    <title>Staff | Public Album</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet">
@@ -76,7 +76,7 @@ if($_SESSION['login']!="1"){
 
                   </li>
                   <li class="sub-menu">
-                      <a href="public-album.php" >
+                      <a href="manage-patients.php" >
                           <i class="fa fa-images"></i>
                           <span>Public Album</span>
                       </a>
