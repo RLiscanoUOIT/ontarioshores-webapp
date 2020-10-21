@@ -89,10 +89,11 @@ if($_SESSION['login']!="1"){
                           <table class="table table-striped table-advance table-hover">
 	                  	  	  <h4> <?php echo ucfirst($valuefname). " ". ucfirst($valuelname). "'s "; ?> Album Collection </h4>
 							  <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="new-patient.php" style="margin-top:-35px";>Upload Media</a></li>
+                    <li><a class="logout" href="public-upload.php" style="margin-top:-35px";>Upload Media</a></li>
             	              </ul>
                           </table>
-                          <div class="card-deck">
+
+                          <div class="row row-cols-1 row-cols-md-2">
                     
                             <?php
 
@@ -110,15 +111,17 @@ if($_SESSION['login']!="1"){
                                 $urlstr = $url['link'];
 
                                 $opt .= "
+                                <div class='col mb-4'>
                                 <div class='card' style='width:20rem;'> 
                                 <img src='$urlstr' alt='...' class='card-img-top'>
                                 <div class='card-body'>
-                                <a href='albumgallery.php?profileid=$profile&albumname=$item'>
+                                    <a href='albumgallery.php?profileid=$profile&albumname=$item'>
                                     <h4 class='card-title'>$item</h4>      
                                     <a href='#' class='btn btn-primary'>
                                     <button class='btn btn-danger btn-xs' onClick='return confirm('Do you really want to delete');'>
                                     <i class='fa fa-trash-o' alt='DeleteAlbum' title='DeleteAlbum'></i></button>Delete Album</a>
                                    <hr>
+                                    </div>
                                     </div>
                                     </div>";
                                 }
