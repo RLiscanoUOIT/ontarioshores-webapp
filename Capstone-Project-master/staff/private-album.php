@@ -111,7 +111,7 @@ if($_SESSION['login']!="1"){
 
                                 $opt .= "
                                 <div class='card w-auto> 
-                                <img src='$urlstr' alt='...' class='card-img-top'>
+                                <img src='$urlstr' alt='...' class='img-img-thumbnail'>
                                 <div class='card-body'>
                                 <a href='albumgallery.php?profileid=$profile&albumname=$item'>
                                     <h5 class='card-title'>$item</h5>      
