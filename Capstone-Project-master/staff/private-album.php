@@ -124,7 +124,7 @@ if($_SESSION['login']!="1"){
                                 }
                             ?>
                             <?php echo $opt ?>
-                            
+                            </div>
               
                       </div>
                   </div>
