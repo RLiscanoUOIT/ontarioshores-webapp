@@ -35,10 +35,10 @@ if(isset($_POST['upload']))
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
     <title>Staff | Upload Public Media</title>
-    <link href="admin/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="admin/assets/css/style.css" rel="stylesheet">
-    <link href="admin/assets/css/style-responsive.css" rel="stylesheet">
+    <link href="../admin/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../admin/assets/css/style.css" rel="stylesheet">
+    <link href="../admin/assets/css/style-responsive.css" rel="stylesheet">
   </head>
 
   <body>
@@ -58,7 +58,7 @@ if(isset($_POST['upload']))
 	  <!-- logout button -->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="admin/logout.php">Logout</a></li>
+                    <li><a class="logout" href="../logout.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -67,7 +67,7 @@ if(isset($_POST['upload']))
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="#"><img src="admin/assets/img/logo100.png" width="125"></a></p>
+              	  <p class="centered"><a href="#"><img src="../admin/assets/img/logo100.png" width="125"></a></p>
               	 
                   <li class="sub-menu">
                       <a href="manage-patients.php" >
