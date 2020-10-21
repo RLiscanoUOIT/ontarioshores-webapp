@@ -104,7 +104,7 @@ if($_SESSION['login']!="1"){
 
                                 $item = $row['album'];
 
-                                $query = "SELECT link FROM new_media WHERE patientid='$profile', privacy="private" AND album='$item' LIMIT 1";
+                                $query = "SELECT link FROM new_media WHERE patientid='$profile', privacy='private' AND album='$item' LIMIT 1";
                                 $img = mysqli_query($connect, $query);
                                 $url = mysqli_fetch_assoc($img);
                                 $urlstr = $url['link'];
