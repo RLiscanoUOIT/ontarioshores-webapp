@@ -92,7 +92,7 @@ if($_SESSION['login']!="1"){
                     <li><a class="logout" href="new-patient.php" style="margin-top:-35px";>Upload Media</a></li>
             	              </ul>
                           </table>
-                          
+                          <div class="row">
                           <div class="card-deck">
                             
                        
@@ -112,20 +112,21 @@ if($_SESSION['login']!="1"){
                                 $urlstr = $url['link'];
 
                                 $opt .= "
-                    
-
                                 <div class='card w-auto>
-                                <a href='albumgallery.php?profileid=$profile&albumname=$item'>
                                 <div class='card-body'>
                                     <h5 class='card-title'>$item</h5>
                                     <img src='$urlstr' alt='...' class='img-thumbnail'>
-                                    <a href='#' class='btn btn-primary'>Delete Album</a>
+                                    <a href='albumgallery.php?profileid=$profile&albumname=$item'>
+                                    <a href='#' class='btn btn-primary'>
+                                    <button class='btn btn-danger btn-xs' onClick='return confirm('Do you really want to delete');'>
+                                    <i class='fa fa-trash-o' alt='DeleteAlbum' title='DeleteAlbum'></i></button>Delete Album</a>
                                     </div>
                                     </div>
                                     </div>";
                                 }
                             ?>
                             <?php echo $opt ?>
+                            </div>
                             </div>
                             
               
