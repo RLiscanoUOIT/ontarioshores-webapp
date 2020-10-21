@@ -79,6 +79,7 @@ if($_SESSION['login']!="1"){
               </ul>
           </div>
       </aside>
+
       <section id="main-content">
           <section class="wrapper">
           	<h3><i class="fa fa-angle-right"></i> Patient Albums</h3>
@@ -92,9 +93,6 @@ if($_SESSION['login']!="1"){
             	              </ul>
                           </table>
                           
-                            <div class="w3-container w3-padding-32" id="projects">
-                                <button onclick="location.href='albumdeletestaff.php?profileid=<?php echo $profile ?>'" class="w3-button w3-right w3-red">Delete Albums</button>
-                            </div>
                             <div class="row">
                        
                             <?php
@@ -126,13 +124,6 @@ if($_SESSION['login']!="1"){
                             ?>
 
                             <?php echo $opt ?>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                            </div>
-                             </div>
-
-
-
                             </div>
                             
               
