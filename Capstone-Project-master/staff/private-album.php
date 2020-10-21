@@ -93,6 +93,7 @@ if($_SESSION['login']!="1"){
             	              </ul>
                           </table>
                           
+                          <div class="card-deck">
                             
                        
                             <?php
@@ -111,8 +112,8 @@ if($_SESSION['login']!="1"){
                                 $urlstr = $url['link'];
 
                                 $opt .= "
-                                <div class='row'>
-                                <div class='col-sm-6'>
+                    
+
                                 <div class='card w-auto>
                                 <a href='albumgallery.php?profileid=$profile&albumname=$item'>
                                 <div class='card-body'>
