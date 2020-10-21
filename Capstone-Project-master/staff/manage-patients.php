@@ -75,6 +75,13 @@ if($_SESSION['login']!="1"){
                       </a>
 
                   </li>
+                  <li class="sub-menu">
+                      <a href="manage-patients.php" >
+                          <i class="fa fa-users"></i>
+                          <span>Public Album</span>
+                      </a>
+
+                  </li>
               </ul>
           </div>
       </aside>
@@ -82,9 +89,6 @@ if($_SESSION['login']!="1"){
           <section class="wrapper">
           	<h3><i class="fa fa-angle-right"></i> Manage Patients</h3>
 				<div class="row">
-
-
-
                   <div class="col-md-12">
                       <div class="content-panel">
                           <table class="table table-striped table-advance table-hover">
