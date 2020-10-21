@@ -110,8 +110,8 @@ if($_SESSION['login']!="1"){
                                 $urlstr = $url['link'];
 
                                 $opt .= "
-                                <div class='card'> 
-                                <img src='$urlstr' alt='...' class='img-thumbnail'>
+                                <div class='card' style='width:20rem;'> 
+                                <img src='$urlstr' alt='...' class='card-img-top'>
                                 <div class='card-body'>
                                 <a href='albumgallery.php?profileid=$profile&albumname=$item'>
                                     <h4 class='card-title'>$item</h4>      
