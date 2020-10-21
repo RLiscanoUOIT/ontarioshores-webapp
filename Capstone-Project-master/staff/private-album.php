@@ -113,9 +113,16 @@ if($_SESSION['login']!="1"){
                                 $img = mysqli_query($connect, $query);
                                 $url = mysqli_fetch_assoc($img);
                                 $urlstr = $url['link'];
-                                                    
 
-                                $opt .= "<div class='card-title'><h5>$item</h5><a href='albumgallery.php?profileid=$profile&albumname=$item'><img id='$urlstr' src='$urlstr' style='width: 100%; height: 100%; padding: 3px;'></a></div>";
+                                $opt .= "<div class='col-sm-6'>
+                                <div class='card'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>$item</h5><a href='albumgallery.php?profileid=$profile&albumname=$item'>\
+                                    <img id='$urlstr' src='$urlstr' style='width: 100%; height: 100%; padding: 3px;'></a>
+                                    <a href='#' class='btn btn-primary'>Delete Album</a>
+                                    </div>
+                                    </div>
+                                    </div>";
                                 }
                             ?>
 
@@ -123,7 +130,7 @@ if($_SESSION['login']!="1"){
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                             </div>
-                            </div>
+                             </div>
 
 
 
