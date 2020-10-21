@@ -75,7 +75,7 @@ if(isset($_POST['upload']))
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="public-album.php" >
+                      <a href="staff/public-album.php" >
                           <i class="fa fa-image"></i>
                           <span>Public Album</span>
                       </a>
