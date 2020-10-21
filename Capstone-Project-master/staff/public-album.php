@@ -65,19 +65,17 @@ if($_SESSION['login']!="1"){
 
               	  <p class="centered"><a href="#"><img src="assets/img/logo100.png" width="125"></a></p>
 
-                  <li class="sub-menu">
+                    <li class="sub-menu">
                       <a href="manage-patients.php" >
                           <i class="fa fa-users"></i>
                           <span>Manage Patients</span>
                       </a>
-
                   </li>
                   <li class="sub-menu">
                       <a href="public-album.php" >
-                          <i class="fa fa-images"></i>
-                          <span>Public Albums</span>
+                          <i class="fa fa-image"></i>
+                          <span>Public Album</span>
                       </a>
-
                   </li>
                   
               </ul>

@@ -62,20 +62,19 @@ if($_SESSION['login']!="1"){
               	  <p class="centered"><a href="#"><img src="assets/img/logo100.png" width="125"></a></p>
 
               	 
-                  <li class="sub-menu">
+                    <li class="sub-menu">
                       <a href="manage-patients.php" >
                           <i class="fa fa-users"></i>
                           <span>Manage Patients</span>
                       </a>
-
                   </li>
                   <li class="sub-menu">
                       <a href="public-album.php" >
-                          <i class="fa fa-images"></i>
-                          <span>Public Albums</span>
+                          <i class="fa fa-image"></i>
+                          <span>Public Album</span>
                       </a>
-
                   </li>
+
               </ul>
           </div>
       </aside>
@@ -105,7 +104,7 @@ if($_SESSION['login']!="1"){
 
                                 $item = $row['album'];
 
-                                $query = "SELECT link FROM new_media WHERE patientid='$profile' AND album='$item' LIMIT 1";
+                                $query = "SELECT link FROM new_media WHERE patientid='$profile', privacy="private" AND album='$item' LIMIT 1";
                                 $img = mysqli_query($connect, $query);
                                 $url = mysqli_fetch_assoc($img);
                                 $urlstr = $url['link'];

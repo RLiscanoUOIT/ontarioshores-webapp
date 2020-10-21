@@ -73,15 +73,14 @@ if($_SESSION['login']!="1"){
                           <i class="fa fa-users"></i>
                           <span>Manage Patients</span>
                       </a>
-
                   </li>
                   <li class="sub-menu">
                       <a href="public-album.php" >
                           <i class="fa fa-image"></i>
                           <span>Public Album</span>
                       </a>
-
                   </li>
+
               </ul>
           </div>
       </aside>

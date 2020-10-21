@@ -14,7 +14,7 @@ $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!'
 
 //ensures user is logged in
 if($_SESSION['login']!="1"){
-	header( "Location: staff/stafflogin.php");
+	header( "Location: log-in.php");
 }
 
 // for updating user info
@@ -68,19 +68,18 @@ if(isset($_POST['upload']))
 
               	  <p class="centered"><a href="#"><img src="admin/assets/img/logo100.png" width="125"></a></p>
               	 
-
                   <li class="sub-menu">
                       <a href="manage-patients.php" >
                           <i class="fa fa-users"></i>
                           <span>Manage Patients</span>
                       </a>
-
                   </li>
                   <li class="sub-menu">
                       <a href="public-album.php" >
-                          <i class="fa fa-images"></i>
-                          <span>Public Albums</span>
+                          <i class="fa fa-image"></i>
+                          <span>Public Album</span>
                       </a>
+                  </li>
 
               </ul>
           </div>
@@ -103,17 +102,16 @@ $tmplink = $_FILES['userfile']['name'];
 $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$album=$_POST['album'];
 	$filelink=$_POST['link'];
-	$patientid=$_POST['patientid'];
+	$patientid=0;
 	$tags=$_POST['tags'];
   $type=$_POST['type'];
-  $privacy="public";
 	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags',privacy='public'");	
 	if($query)
 		{
 		echo "<script>alert('Media Added');</script>";
 		}
 	
-		header( "Location: staff/manage-patients.php");
+		header( "Location: staff/public-album.php");
 ?>
 
 <?php } catch(Exception $e) { ?>
@@ -126,7 +124,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$_SESSION['pid']=$row['id'];
 	$tmpid=$row['id'];
 ?>
-<h3><i class="fa fa-angle-right"></i>Upload Media for <?php echo $row['fname']?> <?php echo $row['lname']?></h3>
+<h3><i class="fa fa-angle-right"></i>Upload Public Media</h3>
 <p><?php echo $link ?><p>
 
 <label for="album">Album Name:</label>
