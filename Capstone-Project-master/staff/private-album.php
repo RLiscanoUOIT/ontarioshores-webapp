@@ -110,23 +110,29 @@ if($_SESSION['login']!="1"){
                                 $urlstr = $url['link'];
 
                                 $opt .= "
-                                <div class='card> 
-                                <div class='card-img-top'>
-                                <div class='crdImage'>
-                                <div class='img-wrapper'>
-                                <img src='$urlstr' alt='...' class='thumb'>
-                                <div class='card-body'>
-                                <a href='albumgallery.php?profileid=$profile&albumname=$item'>
-                                    <h4 class='card-title'>$item</h4>      
-                                    <a href='#' class='btn btn-primary'>
-                                    <button class='btn btn-danger btn-xs' onClick='return confirm('Do you really want to delete');'>
-                                    <i class='fa fa-trash-o' alt='DeleteAlbum' title='DeleteAlbum'></i></button>Delete Album</a>
-                                   <hr>
+                                <div class='card-block'>
+                                <h5 class='card-title'><a href='#'>Product Name</a></h5>
+                                <div class='card-text'>
+                                    for Product category &#45; sub-category
+                                </div>
+                            </div>
+                            <div class='card-footer'>
+                                <small><a class='card-footer-link' href='#'>Seller's Name</a></small>
+                                <a class='btn btn-info float-right btn-sm' href='#'>Details</a>
+                            </div>
+                        </div>
+                        
+                        <div class='card hvr-float-shadow'>
+                            <div class='card-img-top'>
+                                <div class='productImage'>
+                                    <div class='img-wrapper'>
+                                        <a class='thumb' href='#'>
+                                            <img src='https://medsell.in/public/profilepics/mOM0201011D1491339837.JPG'>
+                                        </a>
                                     </div>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>";
+                                </div>
+                                <!--img class='img-fluid' src='https://medsell.in/public/profilepics/mOM0201011D1491339837.JPG'-->
+                            </div>";
                                 }
                             ?>
                             <?php echo $opt ?>
