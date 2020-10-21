@@ -2,9 +2,8 @@
 session_start();
 include'dbconnection.php';
 //Checking session is valid or not
-require_once('../dbconfig/config.php');
-require('../vendor/autoload.php');
-
+require_once('dbconfig/config.php');
+require('vendor/autoload.php');
 // this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
 //aws php v3
 $s3 = new Aws\S3\S3Client([
@@ -34,11 +33,11 @@ if(isset($_POST['upload']))
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Staff | Upload Public Media</title>
-    <link href="../admin/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="../admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="../admin/assets/css/style.css" rel="stylesheet">
-    <link href="../admin/assets/css/style-responsive.css" rel="stylesheet">
+    <title>Staff | Upload Media</title>
+    <link href="admin/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="admin/assets/css/style.css" rel="stylesheet">
+    <link href="admin/assets/css/style-responsive.css" rel="stylesheet">
   </head>
 
   <body>
@@ -58,7 +57,7 @@ if(isset($_POST['upload']))
 	  <!-- logout button -->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../logout.php">Logout</a></li>
+                    <li><a class="logout" href="admin/logout.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -67,7 +66,7 @@ if(isset($_POST['upload']))
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="#"><img src="../admin/assets/img/logo100.png" width="125"></a></p>
+              	  <p class="centered"><a href="#"><img src="admin/assets/img/logo100.png" width="125"></a></p>
               	 
                   <li class="sub-menu">
                       <a href="manage-patients.php" >
@@ -76,7 +75,7 @@ if(isset($_POST['upload']))
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="public-album.php" >
+                      <a href="staff/public-album.php" >
                           <i class="fa fa-image"></i>
                           <span>Public Album</span>
                       </a>
@@ -106,21 +105,28 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$patientid=$_POST['patientid'];
 	$tags=$_POST['tags'];
   $type=$_POST['type'];
-	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='0', album='$album', tags='$tags',privacy='public'");	
+  $privacy='patient';
+	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags', privacy='patient'");	
 	if($query)
 		{
-		echo "<script>alert('Media Added');</script>";
+    echo "<script>alert('Media Added');</script>";
+    echo $privacy;
 		}
 	
-		header( "Location: ../staff/public-album.php");
+		header( "Location: staff/manage-patients.php");
 ?>
-
 
 <?php } catch(Exception $e) { ?>
 <p>Upload error i cri:(</p>
 <?php } } ?>
 		
-<h3><i class="fa fa-angle-right"></i>Upload Public Media</h3>
+<?php
+	$ret=mysqli_query($con,"select * from patient where id='".$_GET['uid']."'");	
+	$row=mysqli_fetch_array($ret);
+	$_SESSION['pid']=$row['id'];
+	$tmpid=$row['id'];
+?>
+<h3><i class="fa fa-angle-right"></i>Upload Media for <?php echo $row['fname']?> <?php echo $row['lname']?></h3>
 <p><?php echo $link ?><p>
 
 <label for="album">Album Name:</label>
