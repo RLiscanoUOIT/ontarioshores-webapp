@@ -9,11 +9,11 @@ if($_SESSION['login']!="1"){
 
 ?>
 
-//get patient name and info from db
 <?php
+//get patient name and info from db
     $connect = mysqli_connect("us-cdbr-iron-east-04.cleardb.net", "bc9da719e482f3", "deea7ef6", "heroku_dbefbfd5b04ac35");
     $profile = $_GET['uid'];
-    $query = "SELECT fname FROM patient WHERE id='$profile'";
+    $query = "SELECT * FROM patient WHERE id='$profile'";
     $result = mysqli_query($connect, $query);
     $value = mysqli_fetch_assoc($result);
     $valuefname = $value['fname'];
@@ -96,6 +96,7 @@ if($_SESSION['login']!="1"){
                                 <button onclick="location.href='albumdeletestaff.php?profileid=<?php echo $profile ?>'" class="w3-button w3-right w3-red">Delete Albums</button>
                             </div>
                             <div class="grid-container">
+                            
                             <?php
 
                             $sql = "SELECT DISTINCT album FROM new_media WHERE patientid='$profile' AND type='picture'";

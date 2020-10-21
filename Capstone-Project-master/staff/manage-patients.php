@@ -119,7 +119,7 @@ if($_SESSION['login']!="1"){
                               <tr>
                               <td><?php echo $cnt;?></td>
                                   <td><?php echo $row['fname'];?></td>
-                                 <td><?php echo $row['lname'];?></td>
+                                  <td><?php echo $row['lname'];?></td>
 
                                   <td><?php echo $row['datejoined'];?></td>
                                   <td>
