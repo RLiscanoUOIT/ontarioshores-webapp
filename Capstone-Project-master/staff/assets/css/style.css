@@ -1096,48 +1096,27 @@ PANELS CONFIGURATIONS
 
 /*STOCK CARD Panel*/
 .card {
-  background: white;
-  box-shadow: 0 2px 1px rgba(163, 80, 11, 0.452);
-  margin-bottom: 1em;
-  height: 250px;
-}
-.crdImage {
-    position: relative;
-    float: left;
-    display: inline-block;
-}
-.img-wrapper {
-    padding: 10px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-.img-wrapper .thumb {
-    height: 100%;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
   }
   
-  .img-project,
-  .thumb {
-    display: block;
-  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   
-  .img-project img,
-  .thumb img {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    max-width: 100%;
-    max-height: 100%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
   }
-  
+  .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
 
 .stock .stock-chart {
   background: #00c5de;
