@@ -135,7 +135,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
   <input type="radio" id="audio" name="type" value="audio">
   <label for="audio">Audio</label><br>
 <input type="hidden" id="link" name="link" value="<?php echo $link ?>">
-<input type="hidden" id="patientid" name="patientid" value='0'>
+<input type="hidden" id="patientid" name="patientid" value="<?php echo $tmpid?>">
   <input name="userfile" type="file"><br><br>
     <input type="submit" name="upload" value="Upload">
 </form>
