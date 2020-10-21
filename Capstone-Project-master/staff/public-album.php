@@ -92,7 +92,7 @@ if($_SESSION['login']!="1"){
                           <table class="table table-striped table-advance table-hover">
 	                  	  	  <h4><i class="fa fa-angle-right"></i> Album Collection </h4>
 							  <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="new-patient.php" style="margin-top:-35px";>Upload Media</a></li>
+                    <li><a class="logout" href="public-upload.php" style="margin-top:-35px";>Upload Media</a></li>
             	              </ul>
                           </table>
                       </div>

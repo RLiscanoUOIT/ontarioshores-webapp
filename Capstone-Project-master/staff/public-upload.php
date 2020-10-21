@@ -106,7 +106,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$patientid=$_POST['patientid'];
 	$tags=$_POST['tags'];
   $type=$_POST['type'];
-  $privacy='public';
+  $privacy="public";
 	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags',privacy='$privacy'");	
 	if($query)
 		{
