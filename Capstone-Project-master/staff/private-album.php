@@ -110,8 +110,11 @@ if($_SESSION['login']!="1"){
                                 $urlstr = $url['link'];
 
                                 $opt .= "
-                                <div class='card w-auto> 
-                                <img src='$urlstr' alt='...' class='img-thumbnail'>
+                                <div class='card> 
+                                <div class='card-img-top'>
+                                <div class='crdImage'>
+                                <div class='img-wrapper'>
+                                <img src='$urlstr' alt='...' class='thumb'>
                                 <div class='card-body'>
                                 <a href='albumgallery.php?profileid=$profile&albumname=$item'>
                                     <h4 class='card-title'>$item</h4>      
@@ -119,6 +122,9 @@ if($_SESSION['login']!="1"){
                                     <button class='btn btn-danger btn-xs' onClick='return confirm('Do you really want to delete');'>
                                     <i class='fa fa-trash-o' alt='DeleteAlbum' title='DeleteAlbum'></i></button>Delete Album</a>
                                    <hr>
+                                    </div>
+                                    </div>
+                                    </div>
                                     </div>
                                     </div>";
                                 }
