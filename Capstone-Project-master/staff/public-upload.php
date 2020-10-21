@@ -118,12 +118,6 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 <p>Upload error i cri:(</p>
 <?php } } ?>
 		
-<?php
-	$ret=mysqli_query($con,"select * from patient where id='".$_GET['uid']."'");	
-	$row=mysqli_fetch_array($ret);
-	$_SESSION['pid']=$row['id'];
-	$tmpid=$row['id'];
-?>
 <h3><i class="fa fa-angle-right"></i>Upload Public Media</h3>
 <p><?php echo $link ?><p>
 
