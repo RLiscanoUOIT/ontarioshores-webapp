@@ -70,12 +70,17 @@ if(isset($_POST['upload']))
               	 
 
                   <li class="sub-menu">
-                      <a href="staff/manage-patients.php" >
+                      <a href="manage-patients.php" >
                           <i class="fa fa-users"></i>
                           <span>Manage Patients</span>
                       </a>
 
                   </li>
+                  <li class="sub-menu">
+                      <a href="public-album.php" >
+                          <i class="fa fa-images"></i>
+                          <span>Public Albums</span>
+                      </a>
 
               </ul>
           </div>

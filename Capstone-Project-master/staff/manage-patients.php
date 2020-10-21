@@ -124,7 +124,7 @@ if($_SESSION['login']!="1"){
                                   <td><?php echo $row['datejoined'];?></td>
                                   <td>
 								  <!-- icons for each patient -->
-									<a href="albumsstaff.php?uid=<?php echo $row['id'];?>">
+									<a href="private-album.php?uid=<?php echo $row['id'];?>">
                                      <button class="btn btn-success btn-xs"><i class="fa fa-play" alt="Play Media" title="Play Media"></i></button></a>
                                      <a href="https://shrouded-eyrie-19930.herokuapp.com/update-files_staff.php?uid=<?php echo $row['id'];?>">
                                      <button class="btn btn-primary btn-xs"><i class="fa fa-upload" alt="Upload Files" title="Upload Files"></i></button></a>

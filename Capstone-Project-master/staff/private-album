@@ -7,21 +7,6 @@ if($_SESSION['login']!="1"){
 	header( "Location: log-in.php");
 }
 
-
-//for deleting patients
-	if(isset($_GET['id']))
-	{
-	$userid=$_GET['id'];
-	$caregiverdelete=mysqli_query($con,"delete from caregiver where patientid='$userid'");
-	$mediadelete=mysqli_query($con,"delete from new_media where patientid='$userid'");
-	$msg=mysqli_query($con,"delete from patient where id='$userid'");
-		if($msg && $caregiverdelete && $mediadelete)
-		{
-		echo "<script>alert('Patient data, associated caregivers and media deleted');</script>";
-		header( "Location: manage-patients.php");
-		}
-	}
-
 ?>
 
 <!DOCTYPE html>
@@ -95,6 +80,20 @@ if($_SESSION['login']!="1"){
                     <li><a class="logout" href="new-patient.php" style="margin-top:-35px";>Upload Media</a></li>
             	              </ul>
                           </table>
+                           <?php
+                                $connect = mysqli_connect("us-cdbr-iron-east-04.cleardb.net", "bc9da719e482f3", "deea7ef6", "heroku_dbefbfd5b04ac35");
+                                $profile = $_GET['uid'];
+                                $query = "SELECT fname FROM patient WHERE id='$profile'";
+                                $result = mysqli_query($connect, $query);
+                                $value = mysqli_fetch_assoc($result);
+                                $valuestr = $value['fname'];
+                                ?>
+                            <div class="w3-container w3-padding-32" id="projects">
+                                <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Albums in Patient Profile: <?php echo ucfirst($valuestr); ?></h3>
+                                <button onclick="location.href='albumdeletestaff.php?profileid=<?php echo $profile ?>'" class="w3-button w3-right w3-red">Delete Albums</button>
+                            </div>
+                            
+              
                       </div>
                   </div>
               </div>
