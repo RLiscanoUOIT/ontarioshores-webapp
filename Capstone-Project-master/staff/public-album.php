@@ -65,7 +65,6 @@ if($_SESSION['login']!="1"){
 
               	  <p class="centered"><a href="#"><img src="assets/img/logo100.png" width="125"></a></p>
 
-              	 
                   <li class="sub-menu">
                       <a href="manage-patients.php" >
                           <i class="fa fa-users"></i>
@@ -80,6 +79,7 @@ if($_SESSION['login']!="1"){
                       </a>
 
                   </li>
+                  
               </ul>
           </div>
       </aside>

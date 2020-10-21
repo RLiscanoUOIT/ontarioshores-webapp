@@ -18,7 +18,7 @@ if($_SESSION['login']!="1"){
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Staff | Public Album</title>
+    <title>Staff | Private Album</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet">
@@ -86,11 +86,35 @@ if($_SESSION['login']!="1"){
                                 $query = "SELECT fname FROM patient WHERE id='$profile'";
                                 $result = mysqli_query($connect, $query);
                                 $value = mysqli_fetch_assoc($result);
-                                $valuestr = $value['fname'];
+                                $valuefname = $value['fname'];
+                                $valuelname = $value['lname'];
                                 ?>
                             <div class="w3-container w3-padding-32" id="projects">
                                 <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Albums in Patient Profile: <?php echo ucfirst($valuestr); ?></h3>
                                 <button onclick="location.href='albumdeletestaff.php?profileid=<?php echo $profile ?>'" class="w3-button w3-right w3-red">Delete Albums</button>
+                            </div>
+                            <div class="grid-container">
+                            <?php
+
+                            $sql = "SELECT DISTINCT album FROM new_media WHERE patientid='$profile' AND type='picture'";
+                            $result2 = mysqli_query($connect, $sql);
+                            $opt = "";
+
+                                while($row = mysqli_fetch_assoc($result2)) {
+
+                                $item = $row['album'];
+
+                                $query = "SELECT link FROM new_media WHERE patientid='$profile' AND album='$item' LIMIT 1";
+                                $img = mysqli_query($connect, $query);
+                                $url = mysqli_fetch_assoc($img);
+                                $urlstr = $url['link'];
+
+                                $opt .= "<div class='grid-item'><h5>$item</h5><a href='albumgallery.php?profileid=$profile&albumname=$item'><img id='$urlstr' src='$urlstr' style='width: 100%; height: 100%; padding: 3px;'></a></div>";
+                                }
+                            ?>
+
+                            <?php echo $opt ?>
+
                             </div>
                             
               
