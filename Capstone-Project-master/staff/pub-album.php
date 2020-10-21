@@ -32,7 +32,7 @@ header("Location: stafflogin.php");}
         <a href="https://shrouded-eyrie-19930.herokuapp.com/staff/manage-patients.php" class="w3-bar-item w3-button"><b>Manage Patients</b></a>
         <!--Float to the right, hide in small screen -->
         <div class="w3-right w3-hide-small">
-          <a href="public-upload.php?uid=<?php echo 0;?>" class="w3-bar-item w3-button">Upload Media</a>
+          <a href="../update-files_staff.php?uid=<?php echo 0;?>" class="w3-bar-item w3-button">Upload Media</a>
         </div>
     </div>
   </div><br>
