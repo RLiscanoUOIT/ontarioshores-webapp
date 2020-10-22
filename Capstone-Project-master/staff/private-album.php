@@ -96,7 +96,7 @@ if($_SESSION['login']!="1"){
 
                         <div class="card-deck">
                                 <div class="col-auto mb-4">
-                                  <div class="card h-100 w-100">
+                                  <div class="card h-70 w-100">
                                     <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                       <h5 class="card-title">Card title</h5>
@@ -107,7 +107,7 @@ if($_SESSION['login']!="1"){
                                   </div>
                                 </div>
                                 <div class="col-auto mb-4">
-                                  <div class="card h-100 w-100">
+                                  <div class="card h-70 w-100">
                                     <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                       <h5 class="card-title">Card title</h5>
@@ -118,8 +118,8 @@ if($_SESSION['login']!="1"){
                                   </div>
                                 </div>
                                 <div class="col-auto mb-4">
-                                    <div class="card h-100 w-100">
-                                      <img src="$urlstr" id="$urlstr" class="card-img-top" alt="...">
+                                    <div class="card h-70 w-100">
+                                      <img src="$urlstr" id="$https://petspruce.com/wp-content/uploads/2020/04/How-to-Raise-a-Chow-Chow-Puppy.jpg" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">$item</h5>
                                         <p class="card-text"><small class="text-muted">46 Items</small>
@@ -129,7 +129,7 @@ if($_SESSION['login']!="1"){
                                     </div>
                                 </div>
                                 <div class="col-auto mb-4">
-                                  <div class="card h-100 w-100">
+                                  <div class="card h-70 w-100">
                                     <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                       <h5 class="card-title">Card title</h5>
@@ -151,8 +151,8 @@ if($_SESSION['login']!="1"){
                                     </div>
                                 </div>
                                   <div class="col-auto mb-4">
-                                  <div class="card h-100 w-100">
-                                    <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
+                                  <div class="card h-70 w-100">
+                                    <img src="https://petspruce.com/wp-content/uploads/2020/04/How-to-Raise-a-Chow-Chow-Puppy.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                       <h5 class="card-title">Card title</h5>
                                       <p class="card-text"><small class="text-muted">46 Items</small>
@@ -162,7 +162,7 @@ if($_SESSION['login']!="1"){
                                   </div>
                                 </div>
                                 <div class="col-auto mb-4">
-                                    <div class="card h-100 w-100">
+                                    <div class="card h-70 w-100">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
@@ -173,7 +173,7 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                   <div class="col mb-4">
-                                    <div class="card h-100 w-100">
+                                    <div class="card h-70 w-100">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
@@ -184,7 +184,7 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                   <div class="col mb-4">
-                                    <div class="card h-70 w-90">
+                                    <div class="card h-70 w-100">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
