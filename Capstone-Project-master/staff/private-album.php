@@ -112,7 +112,7 @@ if($_SESSION['login']!="1"){
                                 $opt .= "
                                 <div class='col mb-4'>
                                 <div class='card' style='width:20rem;'> 
-                                <img src='$urlstr' alt='...' class='card-img-top'>
+                                <img src='$urlstr' alt='...' class='img-thumbnail'>
                                 <div class='card-body'>
                                     <a href='albumgallery.php?profileid=$profile&albumname=$item'>
                                     <h4 class='card-title'>$item</h4>      
@@ -122,7 +122,8 @@ if($_SESSION['login']!="1"){
                                    <hr>
                                     </div>
                                     </div>
-                                    </div>";
+                                    </div>
+                                    <br><br>";
                                 }
                             ?>
                             <?php echo $opt ?>

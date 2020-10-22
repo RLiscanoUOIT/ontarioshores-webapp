@@ -137,9 +137,10 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$tmpid=$row['id'];
 ?>
 
-<h3><i class="fa fa-angle-right"></i>Upload Public Media</h3>
+<h3><i class="fa fa-angle-right"></i>Upload Public Media<?php echo $row['fname']?> <?php echo $row['lname']?></h3>
 <p><?php echo $link ?><p>
 
+<br>
 <label for="album">Album Name:</label>
 <input type="text" id="album" name="album"><br><br>
 <label for="tags">Tags:</label>
