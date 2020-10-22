@@ -34,10 +34,10 @@ if($_SESSION['login']!="1"){
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
     <title>Staff | Public Album</title>
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/style-responsive.css" rel="stylesheet">
+    <link href="staff/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="staff/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="staff/assets/css/style.css" rel="stylesheet">
+    <link href="staff/assets/css/style-responsive.css" rel="stylesheet">
   </head>
 
   <body>
