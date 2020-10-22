@@ -1,6 +1,6 @@
 <?php
 session_start();
-include'dbconnection.php';
+include'../dbconnection.php';
 
 //ensures user is logged in
 if($_SESSION['login']!="1"){
