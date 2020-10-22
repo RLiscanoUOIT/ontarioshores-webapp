@@ -1101,6 +1101,7 @@ PANELS CONFIGURATIONS
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
     min-width: 70px;
+    max-width: 250px;
   }
   
   /* On mouse-over, add a deeper shadow */
@@ -1114,7 +1115,7 @@ PANELS CONFIGURATIONS
     
   }
   .card-img-top {
-    width: 100%;
+    width: 80%;
     height: 15vw;
     object-fit: cover;
   }
