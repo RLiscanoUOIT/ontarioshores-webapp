@@ -96,7 +96,7 @@ if($_SESSION['login']!="1"){
 
                         <div class="card-deck">
                                 <div class="col mb-4">
-                                  <div class="card h-70 w-90">
+                                  <div class="card h-100 w-100">
                                     <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                       <h5 class="card-title">Card title</h5>
@@ -107,7 +107,7 @@ if($_SESSION['login']!="1"){
                                   </div>
                                 </div>
                                 <div class="col mb-4">
-                                    <div class="card h-70 w-90">
+                                    <div class="card h-100 w-100">
                                       <img src="$urlstr" id="$urlstr" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">$item</h5>
@@ -118,7 +118,7 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                   <div class="col mb-4">
-                                    <div class="card h-70 w-90">
+                                    <div class="card h-100 w-100">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
@@ -129,7 +129,7 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                   <div class="col mb-4">
-                                    <div class="card h-70 w-90">
+                                    <div class="card h-100 w-100">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
@@ -140,7 +140,7 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                   <div class="col mb-4">
-                                    <div class="card h-70 w-90">
+                                    <div class="card h-100 w-100">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
