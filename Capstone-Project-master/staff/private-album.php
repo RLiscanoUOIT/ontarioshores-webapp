@@ -37,19 +37,18 @@ if($_SESSION['login']!="1"){
   </head>
 
   <body>
-
-  <section id="container" >
-      <header class="header black-bg">
-              <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
-            <a href="#" class="logo"><b>Staff Dashboard</b></a>
-            <div class="nav notify-row" id="top_menu">
+        <section id="container" >
+            <header class="header black-bg">
+                    <div class="sidebar-toggle-box">
+                        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+                    </div>
+                  <a href="#" class="logo"><b>Staff Dashboard</b></a>
+                  <div class="nav notify-row" id="top_menu">
                 </ul>
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="logout.php">Logout</a></li>
+                    <li><a class="logout" href="#">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -59,17 +58,17 @@ if($_SESSION['login']!="1"){
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="#"><img src="assets/img/logo100.png" width="125"></a></p>
+              	  <p class="centered"><a href="#"><img src="https://vetstreet-brightspot.s3.amazonaws.com/de/7def60a7fb11e0a0d50050568d634f/file/Rottweiler-5-645mk062811.jpg" width="125"></a></p>
 
               	 
                     <li class="sub-menu">
-                      <a href="manage-patients.php" >
+                      <a href="#" >
                           <i class="fa fa-users"></i>
                           <span>Manage Patients</span>
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="../public-album.php" >
+                      <a href="#" >
                           <i class="fa fa-image"></i>
                           <span>Public Album</span>
                       </a>
@@ -78,7 +77,7 @@ if($_SESSION['login']!="1"){
               </ul>
           </div>
       </aside>
-
+      
       <section id="main-content">
           <section class="wrapper">
           	<h3><i class="fa fa-angle-right"></i> Patient Albums</h3>
@@ -171,20 +170,17 @@ if($_SESSION['login']!="1"){
                     </div>
                 </div>
             </section>
-      </section
-  ></section>
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
-    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="assets/js/common-scripts.js"></script>
-  <script>
-      $(function(){
-          $('select.styled').customSelect();
-      });
 
-  </script>
 
-  </body>
+
+
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+        <script src="assets/js/common-scripts.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    </body>
 </html>
