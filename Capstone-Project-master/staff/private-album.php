@@ -85,46 +85,38 @@ if($_SESSION['login']!="1"){
 				<div class="row">
                   <div class="col-md-12">
                       <div class="content-panel">
-	                  	  	  <h4> <?php echo ucfirst($valuefname). " ". ucfirst($valuelname). "'s "; ?> Album Collection </h4>
-							  <ul class="nav pull-right top-menu">
-                              <li><a class="logout" href="#" style="margin-top:-35px";>View Profile</a></li>
-                              <li><a class="logout" href="../update-files_staff.php" style="margin-top:-35px";>Upload Media</a></li>
-                              </ul>
-                              <br>
-                              <br>
-                              <div class="card-deck">
-                            <?php
+                        <h4> Album Collection </h4>
+                        <ul class="nav pull-right top-menu">
+                        <li><a class="logout" href="#" style="margin-top:-35px";>View Profile</a></li>
+                        <li><a class="logout" href="#" style="margin-top:-35px";>Upload Media</a></li>
+                        </ul>
+                        <br>
+                        <br>
 
-                            $sql = "SELECT DISTINCT album FROM new_media WHERE patientid='$profile' AND type='picture'";
-                            $result2 = mysqli_query($connect, $sql);
-                            $opt = "";
-
-                                while($row = mysqli_fetch_assoc($result2)) {
-
-                                $item = $row['album'];
-
-                                $query = "SELECT link FROM new_media WHERE patientid='$profile' AND privacy='private' AND album='$item' LIMIT 1";
-                                $img = mysqli_query($connect, $query);
-                                $url = mysqli_fetch_assoc($img);
-                                $urlstr = $url['link'];
-
-                                // $opt .= "
-                                // <div class='col mb-4'>
-                                //     <div class='card h-70 w-90'>
-                                //       <img src='$urlstr' id='$urlstr' class='card-img-top' alt='...'>
-                                //       <div class='card-body'>
-                                //         <h5 class='card-title'>$item</h5>
-                                //         <p class='card-text'><small class='text-muted'>46 Items</small>
-                                //         <button class='btn btn-danger btn-s pull-right' onClick='return confirm('Do you really want to delete');'  a href='https://www.facebook.com/' >
-                                //               <i class='fa fa-trash-o ' alt='Delete' title='Delete'></i></button></a></p>
-                                //       </div>
-                                //     </div>
-                                //   </div>
-                                // ";
-                                }
-                            ?>
-                            <?php echo $opt ?>
-                            <div class="col mb-4">
+                        <div class="card-deck">
+                                <div class="col mb-4">
+                                  <div class="card h-70 w-90">
+                                    <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text"><small class="text-muted">46 Items</small>
+                                      <button class="btn btn-danger btn-s pull-right" onClick="return confirm('Do you really want to delete');"  a href="https://www.facebook.com/" >
+                                            <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col mb-4">
+                                    <div class="card h-70 w-90">
+                                      <img src="$urlstr" id="$urlstr" class="card-img-top" alt="...">
+                                      <div class="card-body">
+                                        <h5 class="card-title">$item</h5>
+                                        <p class="card-text"><small class="text-muted">46 Items</small>
+                                        <button class="btn btn-danger btn-s pull-right" onClick="return confirm('Do you really want to delete');"  a href="https://www.facebook.com/" >
+                                              <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col mb-4">
                                     <div class="card h-70 w-90">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
@@ -146,12 +138,39 @@ if($_SESSION['login']!="1"){
                                       </div>
                                     </div>
                                   </div>
+                                  <div class="col mb-4">
+                                    <div class="card h-70 w-90">
+                                      <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text"><small class="text-muted">46 Items</small>
+                                        <button class="btn btn-danger btn-s pull-right" onClick="return confirm('Do you really want to delete');"  a href="https://www.facebook.com/" >
+                                              <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col mb-4">
+                                    <div class="card h-70 w-90">
+                                      <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text"><small class="text-muted">46 Items</small>
+                                        <button class="btn btn-danger btn-s pull-right" onClick="return confirm('Do you really want to delete');"  a href="https://www.facebook.com/" >
+                                              <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+
+
                             </div>
-              
-                      </div>
-                  </div>
-              </div>
-		</section>
+
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+            </section>
       </section
   ></section>
     <script src="assets/js/jquery.js"></script>
