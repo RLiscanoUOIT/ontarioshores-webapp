@@ -75,7 +75,7 @@ if($_SESSION['login']!="1"){
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="pub-album.php" >
+                      <a href="../pub-album.php" >
                           <i class="fa fa-image"></i>
                           <span>Public Album</span>
                       </a>
@@ -123,7 +123,7 @@ if($_SESSION['login']!="1"){
                                   <td><?php echo $row['datejoined'];?></td>
                                   <td>
 								  <!-- icons for each patient -->
-									 <a href="private-album.php?uid=<?php echo $row['id'];?>">
+									<a href="private-album.php?uid=<?php echo $row['id'];?>">
                                      <button class="btn btn-success btn-xs"><i class="fa fa-play" alt="Play Media" title="Play Media"></i></button></a>
                                      <a href="albumsstaff.php?uid=<?php echo $row['id'];?>">
                                      <button class="btn btn-success btn-xs"><i class="fa fa-image" alt="Play Media2" title="Play Media"></i></button></a>
