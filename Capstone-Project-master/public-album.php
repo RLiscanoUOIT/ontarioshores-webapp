@@ -63,10 +63,10 @@ if($_SESSION['login']!="1"){
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="#"><img src="assets/img/logo100.png" width="125"></a></p>
+              	  <p class="centered"><a href="#"><img src="staff/assets/img/logo100.png" width="125"></a></p>
 
                     <li class="sub-menu">
-                      <a href="manage-patients.php" >
+                      <a href="staff/manage-patients.php" >
                           <i class="fa fa-users"></i>
                           <span>Manage Patients</span>
                       </a>
@@ -99,12 +99,12 @@ if($_SESSION['login']!="1"){
 		</section>
       </section
   ></section>
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
-    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="assets/js/common-scripts.js"></script>
+    <script src="staff/assets/js/jquery.js"></script>
+    <script src="staff/assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="staff/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="staff/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="staff/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="staff/assets/js/common-scripts.js"></script>
   <script>
       $(function(){
           $('select.styled').customSelect();

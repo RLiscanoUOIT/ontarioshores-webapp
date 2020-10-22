@@ -2,7 +2,7 @@
 session_start();
 include'dbconnection.php';
 if($_SESSION['login']!="1"){
-header("Location: stafflogin.php");}
+header("Location: log-in.php");}
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ header("Location: stafflogin.php");}
         <a href="https://shrouded-eyrie-19930.herokuapp.com/staff/manage-patients.php" class="w3-bar-item w3-button"><b>Manage Patients</b></a>
         <!--Float to the right, hide in small screen -->
         <div class="w3-right w3-hide-small">
-          <a href="../public-upload.php?uid=<?php echo 0;?>" class="w3-bar-item w3-button">Upload Media</a>
+          <a href="public-upload.php?uid=<?php echo 0;?>" class="w3-bar-item w3-button">Upload Media</a>
         </div>
     </div>
   </div><br>
@@ -80,7 +80,7 @@ header("Location: stafflogin.php");}
 
   <div class="w3-container w3-padding-32" id="projects">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Albums in Patient Profile: <?php echo ucfirst($valuestr); ?></h3>
-    <button onclick="location.href='albumdeletestaff.php?profileid=<?php echo $profile ?>'" class="w3-button w3-right w3-red">Delete Albums</button>
+    <button onclick="location.href='staff/albumdeletestaff.php?profileid=<?php echo $profile ?>'" class="w3-button w3-right w3-red">Delete Albums</button>
   </div>
 
   <div class="grid-container">
