@@ -95,7 +95,7 @@ if($_SESSION['login']!="1"){
                         <br>
 
                         <div class="card-deck">
-                                <div class="col-auto mb-3">
+                                <div class="col-auto mb-4">
                                   <div class="card h-100 w-100">
                                     <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -106,7 +106,7 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                 </div>
-                                <div class="col-auto mb-3">
+                                <div class="col-auto mb-4">
                                   <div class="card h-100 w-100">
                                     <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -117,7 +117,7 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                 </div>
-                                <div class="col-auto mb-3">
+                                <div class="col-auto mb-4">
                                     <div class="card h-100 w-100">
                                       <img src="$urlstr" id="$urlstr" class="card-img-top" alt="...">
                                       <div class="card-body">
@@ -127,8 +127,8 @@ if($_SESSION['login']!="1"){
                                               <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
                                       </div>
                                     </div>
-                                  </div>
-                                  <div class="col-auto mb-3">
+                                </div>
+                                <div class="col-auto mb-4">
                                   <div class="card h-100 w-100">
                                     <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -139,7 +139,7 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                 </div>
-                                  <div class="col mb-4">
+                                <div class="col-auto mb-4">
                                     <div class="card h-100 w-100">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
@@ -149,8 +149,8 @@ if($_SESSION['login']!="1"){
                                               <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
                                       </div>
                                     </div>
-                                  </div>
-                                  <div class="col mb-4">
+                                </div>
+                                  <div class="col-auto mb-4">
                                   <div class="card h-100 w-100">
                                     <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
@@ -161,7 +161,7 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                 </div>
-                                  <div class="col mb-4">
+                                <div class="col-auto mb-4">
                                     <div class="card h-100 w-100">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
