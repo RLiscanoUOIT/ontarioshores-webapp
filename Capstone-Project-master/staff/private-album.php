@@ -87,10 +87,12 @@ if($_SESSION['login']!="1"){
                       <div class="content-panel">
 	                  	  	  <h4> <?php echo ucfirst($valuefname). " ". ucfirst($valuelname). "'s "; ?> Album Collection </h4>
 							  <ul class="nav pull-right top-menu">
+                              <li><a class="logout" href="#" style="margin-top:-35px";>View Profile</a></li>
                               <li><a class="logout" href="../update-files_staff.php" style="margin-top:-35px";>Upload Media</a></li>
                               </ul>
                               <br>
                               <br>
+                              <div class="card-deck">
                             <?php
 
                             $sql = "SELECT DISTINCT album FROM new_media WHERE patientid='$profile' AND type='picture'";
@@ -107,12 +109,17 @@ if($_SESSION['login']!="1"){
                                 $urlstr = $url['link'];
 
                                 $opt .= "
-                                <div class='card'>
-                                <div class='card-body'>
-                                <h4 class='card-title'>$item</h4>
-                                <a href='albumgallery.php?profileid=$profile&albumname=$item'>
-                                <img id='$urlstr' src='$urlstr' style='width: 100%; height: 100%; padding: 3px;'></a>
-                                </div>
+                                <div class='col mb-4'>
+                                    <div class='card h-70 w-90'>
+                                      <img src='$urlstr' id='$urlstr' class='card-img-top' alt='...'>
+                                      <div class='card-body'>
+                                        <h5 class='card-title'>$item</h5>
+                                        <p class='card-text'><small class='text-muted'>46 Items</small>
+                                        <button class='btn btn-danger btn-s pull-right' onClick='return confirm('Do you really want to delete');'  a href='https://www.facebook.com/' >
+                                              <i class='fa fa-trash-o ' alt='Delete' title='Delete'></i></button></a></p>
+                                      </div>
+                                    </div>
+                                  </div>
                                 ";
                                 }
                             ?>
