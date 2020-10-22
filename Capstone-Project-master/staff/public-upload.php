@@ -1,20 +1,31 @@
 <?php
 session_start();
-include'../dbconnection.php';
+include'dbconnection.php';
 //Checking session is valid or not
-require_once('../dbconfig/config.php');
-require('../vendor/autoload.php');
+require_once('dbconfig/config.php');
+require('vendor/autoload.php');
 // this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
+
+//$s3 = Aws\S3\S3Client::factory();
 //aws php v3
-$s3 = new Aws\S3\S3Client([
-  'version' => 'latest',
-  'region'  => 'ca-canada-1'
-]);
+
+$IAM_KEY = 'AKIA5J2Q7BO35QB7WE74';
+$IAM_SECRET = '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';
+$s3 = new Aws\S3\S3Client(
+  array(
+    'credentials' => array(
+      'key' => $IAM_KEY,
+      'secret' => $IAM_SECRET
+    ),
+    'version' => 'latest',
+    'region'  => 'ca-central-1'
+  ));
+
 $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
 //ensures user is logged in
 if($_SESSION['login']!="1"){
-	header( "Location: log-in.php");
+	header( "Location: staff/stafflogin.php");
 }
 
 // for updating user info
@@ -34,10 +45,10 @@ if(isset($_POST['upload']))
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
     <title>Staff | Upload Media</title>
-    <link href="../admin/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="../admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="../admin/assets/css/style.css" rel="stylesheet">
-    <link href="../admin/assets/css/style-responsive.css" rel="stylesheet">
+    <link href="admin/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="admin/assets/css/style.css" rel="stylesheet">
+    <link href="admin/assets/css/style-responsive.css" rel="stylesheet">
   </head>
 
   <body>
@@ -57,7 +68,7 @@ if(isset($_POST['upload']))
 	  <!-- logout button -->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../log-in.php">Logout</a></li>
+                    <li><a class="logout" href="admin/logout.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -66,19 +77,15 @@ if(isset($_POST['upload']))
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="#"><img src="../admin/assets/img/logo100.png" width="125"></a></p>
+              	  <p class="centered"><a href="#"><img src="admin/assets/img/logo100.png" width="125"></a></p>
               	 
+
                   <li class="sub-menu">
-                      <a href="manage-patients.php" >
+                      <a href="staff/manage-patients.php" >
                           <i class="fa fa-users"></i>
                           <span>Manage Patients</span>
                       </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="../public-album.php" >
-                          <i class="fa fa-image"></i>
-                          <span>Public Album</span>
-                      </a>
+
                   </li>
 
               </ul>
@@ -104,20 +111,18 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$filelink=$_POST['link'];
 	$patientid=$_POST['patientid'];
 	$tags=$_POST['tags'];
-  $type=$_POST['type'];
-  $privacy='patient';
-	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags', privacy='patient'");	
+	$type=$_POST['type'];
+	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags',privacy='private'");	
 	if($query)
 		{
-    echo "<script>alert('Media Added');</script>";
-    echo $privacy;
+		echo "<script>alert('Media Added');</script>";
 		}
 	
-		header( "Location: ../staff/manage-patients.php");
+		header( "Location: staff/manage-patients.php");
 ?>
 
 <?php } catch(Exception $e) { ?>
-<p>Upload error i cri:(</p>
+<p>Upload error sorry dont cry:(</p>
 <?php } } ?>
 		
 <?php
@@ -126,6 +131,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$_SESSION['pid']=$row['id'];
 	$tmpid=$row['id'];
 ?>
+
 <h3><i class="fa fa-angle-right"></i>Upload Media for <?php echo $row['fname']?> <?php echo $row['lname']?></h3>
 <p><?php echo $link ?><p>
 
