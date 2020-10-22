@@ -95,8 +95,8 @@ if($_SESSION['login']!="1"){
                         <br>
 
                         <div class="card-deck">
-                                <div class="col-auto mb-4">
-                                  <div class="card h-70 w-100">
+                                <div class="col-auto mb-2">
+                                  <div class="card h-100 w-100">
                                     <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                       <h5 class="card-title">Card title</h5>
@@ -106,8 +106,8 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                 </div>
-                                <div class="col-auto mb-4">
-                                  <div class="card h-70 w-100">
+                                <div class="col-auto mb-2">
+                                  <div class="card h-100 w-100">
                                     <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                       <h5 class="card-title">Card title</h5>
@@ -117,8 +117,8 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                 </div>
-                                <div class="col-auto mb-4">
-                                    <div class="card h-70 w-100">
+                                <div class="col-auto mb-2">
+                                    <div class="card h-100 w-100">
                                       <img src="$urlstr" id="$https://petspruce.com/wp-content/uploads/2020/04/How-to-Raise-a-Chow-Chow-Puppy.jpg" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">$item</h5>
@@ -128,8 +128,8 @@ if($_SESSION['login']!="1"){
                                       </div>
                                     </div>
                                 </div>
-                                <div class="col-auto mb-4">
-                                  <div class="card h-70 w-100">
+                                <div class="col-auto mb-2">
+                                  <div class="card h-100 w-100">
                                     <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                       <h5 class="card-title">Card title</h5>
@@ -139,7 +139,7 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                 </div>
-                                <div class="col-auto mb-4">
+                                <div class="col-auto mb-2">
                                     <div class="card h-100 w-100">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
@@ -150,8 +150,8 @@ if($_SESSION['login']!="1"){
                                       </div>
                                     </div>
                                 </div>
-                                  <div class="col-auto mb-4">
-                                  <div class="card h-70 w-100">
+                                  <div class="col-auto mb-2">
+                                  <div class="card h-100 w-100">
                                     <img src="https://petspruce.com/wp-content/uploads/2020/04/How-to-Raise-a-Chow-Chow-Puppy.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                       <h5 class="card-title">Card title</h5>
@@ -161,8 +161,8 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                 </div>
-                                <div class="col-auto mb-4">
-                                    <div class="card h-70 w-100">
+                                <div class="col-auto mb-2">
+                                    <div class="card h-100 w-100">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
@@ -172,8 +172,8 @@ if($_SESSION['login']!="1"){
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="col mb-4">
-                                    <div class="card h-70 w-100">
+                                  <div class="col-auto mb-2">
+                                    <div class="card h-100 w-100">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
@@ -183,8 +183,8 @@ if($_SESSION['login']!="1"){
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="col mb-4">
-                                    <div class="card h-70 w-100">
+                                  <div class="col-auto mb-2">
+                                    <div class="card h-100 w-100">
                                       <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
