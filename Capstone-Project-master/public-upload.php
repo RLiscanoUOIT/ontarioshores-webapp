@@ -85,7 +85,12 @@ if(isset($_POST['upload']))
                           <i class="fa fa-users"></i>
                           <span>Manage Patients</span>
                       </a>
-
+                  </li>
+                  <li class="sub-menu">
+                      <a href="pub-album.php" >
+                          <i class="fa fa-image"></i>
+                          <span>Public Album</span>
+                      </a>
                   </li>
 
               </ul>
@@ -112,7 +117,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$patientid=$_POST['patientid'];
 	$tags=$_POST['tags'];
 	$type=$_POST['type'];
-	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags',privacy='private'");	
+	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags',privacy='public'");	
 	if($query)
 		{
 		echo "<script>alert('Media Added');</script>";
@@ -132,7 +137,7 @@ $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
 	$tmpid=$row['id'];
 ?>
 
-<h3><i class="fa fa-angle-right"></i>Upload Media for <?php echo $row['fname']?> <?php echo $row['lname']?></h3>
+<h3><i class="fa fa-angle-right"></i>Upload <?php echo $row['fname']?> <?php echo $row['lname']?></h3>
 <p><?php echo $link ?><p>
 
 <label for="album">Album Name:</label>
