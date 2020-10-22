@@ -88,7 +88,9 @@ if($_SESSION['login']!="1"){
 	                  	  	  <h4> <?php echo ucfirst($valuefname). " ". ucfirst($valuelname). "'s "; ?> Album Collection </h4>
 							  <ul class="nav pull-right top-menu">
                               <li><a class="logout" href="../update-files_staff.php" style="margin-top:-35px";>Upload Media</a></li>
-            	              </ul>
+                              </ul>
+                              <br>
+                              <br>
                             <?php
 
                             $sql = "SELECT DISTINCT album FROM new_media WHERE patientid='$profile' AND type='picture'";
