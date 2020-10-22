@@ -112,13 +112,11 @@ if($_SESSION['login']!="1"){
                                 $opt .= "
                                 <div class='col mb-4'>
                                 <div class='card'> 
-                                <img src='$urlstr' alt='...' class='img-thumbnail'>
+                                <img src='$urlstr' alt='...' class='card-img-top'>
                                 <div class='card-body'>
                                     <a href='albumgallery.php?profileid=$profile&albumname=$item'>
                                     <h4 class='card-tit le'>$item</h4>      
                                     <a href='#' class='btn btn-primary'>
-                                    <button class='btn btn-danger btn-xs' onClick='return confirm('Do you really want to delete');'>
-                                    <i class='fa fa-trash-o' alt='DeleteAlbum' title='DeleteAlbum'></i></button>Delete Album</a>
                                    <hr>
                                    <br><br>
                                     </div>
