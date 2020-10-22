@@ -85,13 +85,10 @@ if($_SESSION['login']!="1"){
 				<div class="row">
                   <div class="col-md-12">
                       <div class="content-panel">
-                          <table class="table table-striped table-advance table-hover">
 	                  	  	  <h4> <?php echo ucfirst($valuefname). " ". ucfirst($valuelname). "'s "; ?> Album Collection </h4>
 							  <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../update-files_staff.php" style="margin-top:-35px";>Upload Media</a></li>
+                              <li><a class="logout" href="../update-files_staff.php" style="margin-top:-35px";>Upload Media</a></li>
             	              </ul>
-                          </table>
-                    
                             <?php
 
                             $sql = "SELECT DISTINCT album FROM new_media WHERE patientid='$profile' AND type='picture'";
@@ -108,7 +105,6 @@ if($_SESSION['login']!="1"){
                                 $urlstr = $url['link'];
 
                                 $opt .= "
-                                <div class='grid-item'>
                                 <div class='card'>
                                 <div class='card-body'>
                                 <h4 class='card-title'>$item</h4>
