@@ -4,7 +4,7 @@ include'dbconnection.php';
 
 //ensures user is logged in
 if($_SESSION['login']!="1"){
-	header( "Location: log-in.php");
+	header( "Location: ../log-in.php");
 }
 
 ?>
@@ -91,8 +91,6 @@ if($_SESSION['login']!="1"){
                     <li><a class="logout" href="../update-files_staff.php" style="margin-top:-35px";>Upload Media</a></li>
             	              </ul>
                           </table>
-
-                          <div class="row row-cols-1 row-cols-md-2">
                     
                             <?php
 
@@ -110,23 +108,17 @@ if($_SESSION['login']!="1"){
                                 $urlstr = $url['link'];
 
                                 $opt .= "
-                                <div class='col mb-4'>
-                                <div class='card'> 
-                                <img src='$urlstr' alt='...' class='card-img-top'>
+                                <div class='grid-item'>
+                                <div class='card'>
                                 <div class='card-body'>
-                                    <a href='albumgallery.php?profileid=$profile&albumname=$item'>
-                                    <h4 class='card-tit le'>$item</h4>      
-                                    <a href='#' class='btn btn-primary'>
-                                   <hr>
-                                   <br><br>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    ";
+                                <h4 class='card-title'>$item</h4>
+                                <a href='albumgallery.php?profileid=$profile&albumname=$item'>
+                                <img id='$urlstr' src='$urlstr' style='width: 100%; height: 100%; padding: 3px;'></a>
+                                </div>
+                                ";
                                 }
                             ?>
                             <?php echo $opt ?>
-                            </div>
               
                       </div>
                   </div>
