@@ -126,7 +126,7 @@ $_SESSION['galleryDataURL'] = $urls;
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="logout.php">Logout</a></li>
+                    <li><a class="logout" href="logout.php" style="margin-top:-35px">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -157,7 +157,7 @@ $_SESSION['galleryDataURL'] = $urls;
 
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> $albumname</h3>
+          	<h3><i class="fa fa-angle-right"></i> <?php echo$albumname?> </h3>
 
         <form action="secondpage.php" method="post">
         <ul class="gallery">
