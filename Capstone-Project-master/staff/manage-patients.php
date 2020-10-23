@@ -4,7 +4,7 @@ include'dbconnection.php';
 
 //ensures user is logged in
 if($_SESSION['login']!="1"){
-	header( "Location: log-in.php");
+	header( "Location:../log-in.php");
 }
 
 

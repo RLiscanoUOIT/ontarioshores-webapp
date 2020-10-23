@@ -4,7 +4,7 @@ include'dbconnection.php';
 
 //ensures user is logged in
 if($_SESSION['login']!="1"){
-	header( "Location: adminlogin.php");
+	header( "Location: ../log-in.php");
 }
 //for admin delete
 	if(isset($_GET['id']))
