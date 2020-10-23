@@ -93,7 +93,7 @@ if($_SESSION['login']!="1"){
                           <table class="table table-striped table-advance table-hover">
 	                  	  	  <h4><i class="fa fa-angle-right"></i> All Patient Details </h4>
 							  <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="new-patient.php";>Add Patient</a></li>
+                    <li><a class="logout" href="new-patient.php" style="margin-top:-35px";>Add Patient</a></li>
             	</ul>
 							  
 	                  	  	  <hr>
