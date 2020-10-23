@@ -119,7 +119,7 @@ if($_SESSION['login']!="1"){
                                 </div>
                                 <div class="col-auto mb-2">
                                     <div class="card h-100 w-100">
-                                      <img src="$urlstr" id="$https://petspruce.com/wp-content/uploads/2020/04/How-to-Raise-a-Chow-Chow-Puppy.jpg" class="card-img-top" alt="...">
+                                      <img src="https://petspruce.com/wp-content/uploads/2020/04/How-to-Raise-a-Chow-Chow-Puppy.jpg" id="..." class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title">$item</h5>
                                         <p class="card-text"><small class="text-muted">46 Items</small>
@@ -139,61 +139,7 @@ if($_SESSION['login']!="1"){
                                     </div>
                                   </div>
                                 </div>
-                                <div class="col-auto mb-2">
-                                    <div class="card h-100 w-100">
-                                      <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
-                                      <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text"><small class="text-muted">46 Items</small>
-                                        <button class="btn btn-danger btn-s pull-right" onClick="return confirm('Do you really want to delete');"  a href="https://www.facebook.com/" >
-                                              <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
-                                      </div>
-                                    </div>
-                                </div>
-                                  <div class="col-auto mb-2">
-                                  <div class="card h-100 w-100">
-                                    <img src="https://petspruce.com/wp-content/uploads/2020/04/How-to-Raise-a-Chow-Chow-Puppy.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Card title</h5>
-                                      <p class="card-text"><small class="text-muted">46 Items</small>
-                                      <button class="btn btn-danger btn-s pull-right" onClick="return confirm('Do you really want to delete');"  a href="https://www.facebook.com/" >
-                                            <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-auto mb-2">
-                                    <div class="card h-100 w-100">
-                                      <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
-                                      <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text"><small class="text-muted">46 Items</small>
-                                        <button class="btn btn-danger btn-s pull-right" onClick="return confirm('Do you really want to delete');"  a href="https://www.facebook.com/" >
-                                              <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-auto mb-2">
-                                    <div class="card h-100 w-100">
-                                      <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
-                                      <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text"><small class="text-muted">46 Items</small>
-                                        <button class="btn btn-danger btn-s pull-right" onClick="return confirm('Do you really want to delete');"  a href="https://www.facebook.com/" >
-                                              <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-auto mb-2">
-                                    <div class="card h-100 w-100">
-                                      <img src="https://os-webapp1.s3.amazonaws.com/dog.png" class="card-img-top" alt="...">
-                                      <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text"><small class="text-muted">46 Items</small>
-                                        <button class="btn btn-danger btn-s pull-right" onClick="return confirm('Do you really want to delete');"  a href="https://www.facebook.com/" >
-                                              <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
-                                      </div>
-                                    </div>
-                                  </div>
+
                                   
 
 
