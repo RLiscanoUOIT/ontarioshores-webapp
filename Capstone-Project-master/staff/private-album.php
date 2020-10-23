@@ -46,7 +46,6 @@ if($_SESSION['login']!="1"){
                     </div>
                   <a href="#" class="logo"><b>Staff Dashboard</b></a>
                   <div class="nav notify-row" id="top_menu">
-                </ul>
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
