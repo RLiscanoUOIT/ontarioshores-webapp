@@ -113,7 +113,8 @@ if($_SESSION['login']!="1"){
                                 <div class='card h-100 w-100'>
                                   <img src='$urlstr' class='card-img-top' alt='$urlstr'>
                                   <div class='card-body'>
-                                    <h5 class='card-title'>$item</h5>
+                                  <a href='albumgallery.php?profileid=$profile&albumname=$item'>
+                                    <h5 class='card-title'>$item</h5></a>
                                     <p class='card-text'><small class='text-muted'>46 Items</small>
                                     <button class='btn btn-danger btn-s pull-right' onClick='return confirm('Do you really want to delete');'  a href='https://www.facebook.com/' >
                                           <i class='fa fa-trash-o ' alt='Delete' title='Delete'></i></button></a></p>
@@ -123,36 +124,15 @@ if($_SESSION['login']!="1"){
 
                               }
                           ?>
-                          <?php //echo $opt ?>
-                                <div class="col-auto mb-2">
-                                    <div class="card h-100 w-100">
-                                      <img src="https://os-webapp1.s3.ca-central-1.amazonaws.com/baboon.jpg" class="card-img-top" alt="$urlstr">
-                                      <div class="card-body">
-                                        <h5 class="card-title">$item</h5>
-                                        <p class="card-text"><small class="text-muted">46 Items</small>
-                                        <button class="btn btn-danger btn-s pull-right" onClick="return confirm('Do you really want to delete');"  a href="https://www.facebook.com/" >
-                                              <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-auto mb-2">
-                                    <div class="card h-100 w-100">
-                                      <img src="https://os-webapp1.s3.amazonaws.com/2.jpg" class="card-img-top" alt="$urlstr">
-                                      <div class="card-body">
-                                        <h5 class="card-title">$item</h5>
-                                        <p class="card-text"><small class="text-muted">46 Items</small>
-                                        <button class="btn btn-danger btn-s pull-right" onClick="return confirm('Do you really want to delete');"  a href="https://www.facebook.com/" >
-                                              <i class="fa fa-trash-o " alt="Delete" title="Delete"></i></button></a></p>
-                                      </div>
-                                    </div>
-                                  </div>
+                          <?php echo $opt ?>
+                                
 
                           </div>
 
-                        </div>
-                    </div>
-                </div>
-            </section>
+                      </div>
+                  </div>
+              </div>
+          </section>
 
 
 
