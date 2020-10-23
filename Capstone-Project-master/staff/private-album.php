@@ -123,7 +123,7 @@ if($_SESSION['login']!="1"){
 
                               }
                           ?>
-                          <?php echo //$opt ?>
+                          <?php //echo $opt ?>
                                 <div class="col-auto mb-2">
                                     <div class="card h-100 w-100">
                                       <img src="https://os-webapp1.s3.ca-central-1.amazonaws.com/baboon.jpg" class="card-img-top" alt="$urlstr">
