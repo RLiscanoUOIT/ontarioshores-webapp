@@ -113,7 +113,7 @@ if($_SESSION['login']!="1"){
                                 <div class='card h-100 w-100'>
                                   <img src='$urlstr' class='card-img-top' alt='$urlstr'>
                                   <div class='card-body'>
-                                  <a href='albumgallery.php?profileid=$profile&albumname=$item'>
+                                  <a href='private-albumgallery.php?profileid=$profile&albumname=$item'>
                                     <h5 class='card-title'>$item</h5></a>
                                     <p class='card-text'><small class='text-muted'>46 Items</small>
                                     <button class='btn btn-danger btn-s pull-right' onClick='return confirm('Do you really want to delete');'  a href='https://www.facebook.com/' >
