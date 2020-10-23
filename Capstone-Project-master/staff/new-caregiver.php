@@ -91,17 +91,21 @@ if($_SESSION['login']!="1"){
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="#"><img src="assets/img/logo100.png" width="125"></a></p>
-              	  
-
-
-                  <li class="sub-menu">
+                    <p class="centered"><a href="#"><img src="assets/img/logo100.png" width="125"></a></p>
+                    
+                    <li class="sub-menu">
                       <a href="manage-patients.php" >
                           <i class="fa fa-users"></i>
                           <span>Manage Patients</span>
                       </a>
-
                   </li>
+                  <li class="sub-menu">
+                      <a href="../pub-album.php" >
+                          <i class="fa fa-image"></i>
+                          <span>Public Album</span>
+                      </a>
+                  </li>
+                  
               </ul>
           </div>
       </aside>
