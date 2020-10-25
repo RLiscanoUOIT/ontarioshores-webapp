@@ -385,6 +385,31 @@ ul.sidebar-menu li a.active i {
     font-size: 11px;
 }
 
+/* Gallery Stuff */
+ul.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    
+    list-style-type: none;
+    float: left;
+}
+img.gallery {
+    height: 300px;
+    width: 300px;
+}
+aside {
+    float: right;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    /*height: 2.5rem;*/
+}
+
 /* MAIN CONTENT CONFIGURATION */
 #main-content {
     margin-left: 210px;
