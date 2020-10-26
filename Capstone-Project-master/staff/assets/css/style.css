@@ -215,6 +215,19 @@ ul.top-menu > li > .logout {
 	margin-top: 15px;
 }
 
+ul.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    
+    list-style-type: none;
+    float: left;
+}
+li>img.gallery {
+    max-height: 300px;
+    max-width: 600px;
+}
 
 /*sidebar navigation*/
 
@@ -384,10 +397,6 @@ ul.sidebar-menu li a.active i {
     margin: -3px 6px 0 0;
     font-size: 11px;
 }
-
-/* Gallery Stuff */
-
-
 
 /* MAIN CONTENT CONFIGURATION */
 #main-content {
