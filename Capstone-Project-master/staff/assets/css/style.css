@@ -386,19 +386,7 @@ ul.sidebar-menu li a.active i {
 }
 
 /* Gallery Stuff */
-ul.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-    
-    list-style-type: none;
-    float: left;
-}
-li>img.gallery {
-    max-height: 300px;
-    max-width: 600px;
-}
+
 
 
 /* MAIN CONTENT CONFIGURATION */
