@@ -60,6 +60,7 @@ if($_SESSION['login']!="1"){
             	</ul>
             </div>
         </header>
+
 	  <!-- sidebar -->
       <aside>
           <div id="sidebar"  class="nav-collapse ">
@@ -84,6 +85,7 @@ if($_SESSION['login']!="1"){
               </ul>
           </div>
       </aside>
+      
       <section id="main-content">
           <section class="wrapper">
           	<h3><i class="fa fa-angle-right"></i> Manage Patients</h3>
@@ -154,9 +156,9 @@ if($_SESSION['login']!="1"){
     <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
     <script src="assets/js/common-scripts.js"></script>
   <script>
-      $(function(){
-          $('select.styled').customSelect();
-      });
+    //  $(function(){
+    //      $('select.styled').customSelect();
+    //  });
 
   </script>
 
