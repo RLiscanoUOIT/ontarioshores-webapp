@@ -99,6 +99,11 @@ $_SESSION['galleryDataURL'] = $urls;
 
 <!DOCTYPE html>
 <html lang="en">
+        <style>
+            aside {
+            float: right;
+        }
+        </style>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
