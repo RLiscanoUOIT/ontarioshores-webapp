@@ -176,14 +176,14 @@ $_SESSION['galleryDataURL'] = $urls;
         <input type="submit" name="submitButton" value="Copy" />
         <input type="submit" name="submitButton" value="Move" />
         <input type="submit" name="submitButton" value="Delete" />
-        <br />
-        <input type="submit" name="submitButton" value="Play From First Selected" /> 
         
+        <input type="submit" name="submitButton" value="Play From First Selected" /> 
+        <br/>
         <ul class="gallery">
         <?php
             echo $galleryHtml;
         ?>
-        
+
         </ul>
         <aside>
         </aside>
