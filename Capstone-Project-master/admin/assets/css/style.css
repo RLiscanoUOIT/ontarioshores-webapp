@@ -68,7 +68,7 @@ ul.gallery {
     list-style-type: none;
     float: left;
 }
-li>img.gallery {
+img.gallery {
     height: 300px;
     width: 550px;
 }
