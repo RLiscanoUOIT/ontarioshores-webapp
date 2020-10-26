@@ -1809,9 +1809,6 @@ li>img.gallery {
     height: 300px;
     width: 300px;
 }
-aside {
-    float: right;
-}
 
 /* TOGGLE CONFIGURATION */
 .has-switch {
