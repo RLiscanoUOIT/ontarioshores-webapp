@@ -395,7 +395,7 @@ ul.gallery {
     list-style-type: none;
     float: left;
 }
-img.gallery {
+li>img.gallery {
     height: 300px;
     width: 300px;
 }
