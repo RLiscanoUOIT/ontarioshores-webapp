@@ -109,7 +109,7 @@ $_SESSION['galleryDataURL'] = $urls;
     <title>Staff | Private Album</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="../admin/assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
   </head>
 
