@@ -1796,6 +1796,22 @@ label {
 .add-on .btn {
 	height: 34px;
 }
+ul.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    
+    list-style-type: none;
+    float: left;
+}
+li>img.gallery {
+    height: 300px;
+    width: 300px;
+}
+aside {
+    float: right;
+}
 
 /* TOGGLE CONFIGURATION */
 .has-switch {
