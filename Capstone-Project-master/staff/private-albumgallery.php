@@ -160,12 +160,7 @@ $_SESSION['galleryDataURL'] = $urls;
           	<h3><i class="fa fa-angle-right"></i> <?php echo$albumname?> </h3>
 
         <form action="secondpage.php" method="post">
-        <ul class="gallery">
-        <?php
-            echo $galleryHtml;
-        ?>
-        </ul>
-        <aside>
+       
 
         <select name='selectedAlbum'>
         <!--https://stackoverflow.com/a/30525521-->
@@ -182,7 +177,15 @@ $_SESSION['galleryDataURL'] = $urls;
         <input type="submit" name="submitButton" value="Move" />
         <input type="submit" name="submitButton" value="Delete" />
         <br />
-        <input type="submit" name="submitButton" value="Play From First Selected" />
+        <input type="submit" name="submitButton" value="Play From First Selected" /> 
+        
+        <ul class="gallery">
+        <?php
+            echo $galleryHtml;
+        ?>
+        
+        </ul>
+        <aside>
         </aside>
         </form>
 
