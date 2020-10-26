@@ -123,6 +123,7 @@ $_SESSION['galleryDataURL'] = $urls;
                     </div>
                   <a href="#" class="logo"><b>Therapist Dashboard</b></a>
                   <div class="nav notify-row" id="top_menu">
+                  </ul>
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
@@ -159,37 +160,37 @@ $_SESSION['galleryDataURL'] = $urls;
           <section class="wrapper">
           	<h3><i class="fa fa-angle-right"></i> <?php echo$albumname?> </h3>
 
-        <form action="secondpage.php" method="post">
-       
+                <form action="secondpage.php" method="post">
+            
 
-        <select name='selectedAlbum'>
-        <!--https://stackoverflow.com/a/30525521-->
-        <option value="" selected disabled hidden>Album to move/copy to</option>
-        <?php echo $albumOptionHtml; ?>
-        </select>
+                <select name='selectedAlbum'>
+                <!--https://stackoverflow.com/a/30525521-->
+                <option value="" selected disabled hidden>Album to move/copy to</option>
+                <?php echo $albumOptionHtml; ?>
+                </select>
 
-        <!-- keep the album and profileid to the next page -->
-        <!-- https://stackoverflow.com/a/17264124 -->
-        <input type="hidden" name="currentAlbum" value="<?php echo $albumname; ?>" />
-        <input type="hidden" name="currentProfileID" value="<?php echo $profile; ?>" />
+                <!-- keep the album and profileid to the next page -->
+                <!-- https://stackoverflow.com/a/17264124 -->
+                <input type="hidden" name="currentAlbum" value="<?php echo $albumname; ?>" />
+                <input type="hidden" name="currentProfileID" value="<?php echo $profile; ?>" />
 
-        <input type="submit" name="submitButton" value="Copy" />
-        <input type="submit" name="submitButton" value="Move" />
-        <input type="submit" name="submitButton" value="Delete" />
-        
-        <input type="submit" name="submitButton" value="Play From First Selected" /> 
-        <br/>
-        <ul class="gallery">
-        <?php
-            echo $galleryHtml;
-        ?>
+                <input type="submit" name="submitButton" value="Copy" />
+                <input type="submit" name="submitButton" value="Move" />
+                <input type="submit" name="submitButton" value="Delete" />
+                
+                <input type="submit" name="submitButton" value="Play From First Selected" /> 
+                <br/>
+                <ul class="gallery">
+                <?php
+                    echo $galleryHtml;
+                ?>
 
-        </ul>
-        <aside>
-        </aside>
-        </form>
+                </ul>
+                <aside>
+                </asi de>
+                </form>
 
-        </section>
+            </section>
         </section>
     </section>
 
