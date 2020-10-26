@@ -69,8 +69,8 @@ ul.gallery {
     float: left;
 }
 li>img.gallery {
-    max-height: 300px;
-    max-width: 550px;
+    height: 300px;
+    width: 550px;
 }
 
 
