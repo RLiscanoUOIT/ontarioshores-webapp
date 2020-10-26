@@ -190,6 +190,8 @@ $_SESSION['galleryDataURL'] = $urls;
         </form>
 
         </section>
+        </section>
+    </section>
 
 
 
