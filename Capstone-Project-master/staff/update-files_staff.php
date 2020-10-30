@@ -49,7 +49,7 @@ if(isset($_POST['upload']))
               <div class="sidebar-toggle-box">
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
-            <a href="#" class="logo"><b>Staff Dashboard</b></a>
+            <a href="#" class="logo"><b>Therapist Dashboard</b></a>
             <div class="nav notify-row" id="top_menu">
 
 
@@ -98,7 +98,7 @@ if(isset($_POST['upload']))
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name'])) {
 try {
 	//uploads file to amazon AWS bucket
-$upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+$upload = $s3->putObject($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
 	//gets input field values and file link to update db
 $tmplink = $_FILES['userfile']['name'];
 $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
