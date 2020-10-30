@@ -172,6 +172,9 @@ function make_audio($connect)
 		$("#dynamic_slide_show3").carousel('pause');
 	});
   });
+  function goBack() {
+  window.history.back();
+  }
   </script>
   <style>
 	.box{
@@ -214,7 +217,7 @@ function make_audio($connect)
  <body  style="background-color:#919191">
 	<div class="links">
     <a href="help4.html" target="_blank"><h3>Help</h3></a>
-    <a href="staff/manage-patients.php" target="_blank"><h3>Back</h3></a>
+    <button onclick="goBack()" style=" margin: 5px; float: right; text-align: center; ">Back</button>
 	</div>
   <br />
   <?php $profile = $_GET['profileid'];

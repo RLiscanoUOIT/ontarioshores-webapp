@@ -174,7 +174,7 @@ function make_audio($connect)
   });
   function goBack() {
   window.history.back();
-}
+  }
   </script>
 
   <style>
@@ -216,7 +216,7 @@ function make_audio($connect)
   </style>
  </head>
  <body  style="background-color:#919191">
-  <button onclick="goBack()">Back</button>
+ <button onclick="goBack()" style=" margin: 5px; float: right; text-align: center; ">Back</button>
   <br/>
   <?php $profile = $_GET['profileid'];
   $query = "SELECT fname FROM patient WHERE id='$profile'";
