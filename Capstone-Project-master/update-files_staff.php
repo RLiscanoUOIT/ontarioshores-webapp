@@ -113,9 +113,11 @@ $upload = //$s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['use
           $s3->putObject([
             'Bucket' => $bucket,
             'Key'    => $_FILES['userfile']['name'],
-            'Body'   => fopen($_FILES['userfile']['tmp_name'],'rb'),
-            'ACL'    => 'public-read'
+            'SourceFile'   => fopen($_FILES['userfile']['tmp_name'],'rb'),
+            'ACL'    => 'public-read',
+            'StorageClass' => 'REDUCED_REDUNDANCY'
             ]);
+
 
 	//gets input field values and file link to update db
 $tmplink = $_FILES['userfile']['name'];
