@@ -7,15 +7,20 @@ require_once('dbconfig/config.php');
 require('vendor/autoload.php');
 // this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
 //aws php v3
-$s3 = new Aws\S3\S3Client([
-  'version' => 'latest',
-  'region'  => 'ca-canada-1'
-]);
+$s3 = new Aws\S3\S3Client(
+  array(
+    'credentials' => array(
+      'key' => $IAM_KEY,
+      'secret' => $IAM_SECRET
+    ),
+    'version' => 'latest',
+    'region'  => 'ca-central-1'
+  ));
 $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
 //ensuring user is corrected logged in
 if($_SESSION['login']!="1"){
-	header( "Location: caregiverlogin.php");
+	header( "Location: log-in.php");
 }
 
 // for updating user info
@@ -99,7 +104,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES
 
   try {
       //uploads file to amazon aws bucket
-      $upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+      $upload = //$s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+                $s3->putObject([
+                  'Bucket' => $bucket,
+                  'Key'    => basename($_FILES['userfile']['name']),
+                  'SourceFile'   => $_FILES['userfile']['tmp_name'],
+                  'ACL'    => 'public-read',
+                  'StorageClass' => 'REDUCED_REDUNDANCY'
+                  ]);
+      
       //gets input field values and file link to upload to db
       $tmplink = $_FILES['userfile']['name'];
       $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
