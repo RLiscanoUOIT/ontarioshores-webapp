@@ -3,7 +3,7 @@
 session_start();
 
 if($_SESSION['login']!="1"){
-header("Location: caregiverlogin.php");}
+header("Location: log-in.php");}
 
 $connect = mysqli_connect("us-cdbr-iron-east-04.cleardb.net", "bc9da719e482f3", "deea7ef6", "heroku_dbefbfd5b04ac35");
 
@@ -213,7 +213,8 @@ function make_audio($connect)
  </head>
  <body  style="background-color:#919191">
 	<div class="links">
-		<a href="help4.html" target="_blank"><h3>Help</h3></a>
+    <a href="help4.html" target="_blank"><h3>Help</h3></a>
+    <a href="staff/manage-patients.php" target="_blank"><h3>Back</h3></a>
 	</div>
   <br />
   <?php $profile = $_GET['profileid'];
