@@ -98,7 +98,14 @@ if(isset($_POST['upload']))
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name'])) {
 try {
 	//uploads file to amazon AWS bucket
-$upload = $s3->putObject($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+$upload = $s3->putObject([
+        'Bucket' => $bucket,
+        'Key'    => $keyname,
+        'Body'   => fopen($_FILES['userfile']['tmp_name'],'rb'),
+        'ACL'    => 'public-read'
+        ]);
+  //$bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+
 	//gets input field values and file link to update db
 $tmplink = $_FILES['userfile']['name'];
 $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
