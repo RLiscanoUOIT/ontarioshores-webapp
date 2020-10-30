@@ -16,7 +16,7 @@ function emitCheckboxEntry($seqnumber, $url)
 	$output .= "<li>";
 	$output .= "<input type='checkbox' id='".$id."' name='".$name."' value = '".$seqnumber."' />";
 	$output .= PHP_EOL;
-	$output .= "<label for='".$id."'>";
+    $output .= "<label for='".$id."'>";
 	$output .= "<img class='gallery' src='".$url."' />";
 	$output .= "</label>";
 	$output .= "</li>";
@@ -44,7 +44,7 @@ $profile = $_GET['profileid'];
 $albumname = $_GET['albumname'];
 
 // we want to get the associated image paths from the db
-$query = "SELECT id, link FROM new_media WHERE patientid=? AND album=?";
+$query = "SELECT id, link FROM new_media WHERE patientid=? AND album=? AND type=?";
 $stmt = $mysqli->prepare($query);
 
 if($stmt == FALSE) {
@@ -53,7 +53,7 @@ if($stmt == FALSE) {
     exit(-2);
 }
 
-$stmt->bind_param('is', $profile, $albumname);
+$stmt->bind_param('is', $profile, $albumname,);
 $stmt->execute();
 $stmt->bind_result($id, $url);
 
