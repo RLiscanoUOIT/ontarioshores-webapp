@@ -49,7 +49,7 @@ if($_SESSION['login']!="1"){
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <a class="logout" href="logout.php" style="margin-top:-35px">Logout</a>
+                    <a class="logout" href="logout.php">Logout</a>
             	</ul>
             </div>
         </header>
@@ -59,10 +59,10 @@ if($_SESSION['login']!="1"){
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu" id="nav-accordion">
 
-              <p class="centered"><a href="#"><img src="assets/img/logo100.png" width="125"></a></p>
+              <p class="centered"><a href="#"><img src="staff/assets/img/logo100.png" width="125"></a></p>
   	 
                   <li class="sub-menu">
-                      <a href="manage-patients.php" >
+                      <a href="staff/manage-patients.php" >
                           <i class="fa fa-users"></i>
                           <span>Manage Patients</span>
                       </a>
