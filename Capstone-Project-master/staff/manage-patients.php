@@ -47,8 +47,9 @@ if($_SESSION['login']!="1"){
               <div class="sidebar-toggle-box">
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
-            <a href="#" class="logo"><b>Therapist Dashboard</b></a>
+            <a href="#" class="logo"><b>Staff Dashboard</b></a>
             <div class="nav notify-row" id="top_menu">
+
                 </ul>
             </div>
             <div class="top-menu">
@@ -142,8 +143,8 @@ if($_SESSION['login']!="1"){
                   </div>
               </div>
 		</section>
-      </section
-  ></section>
+      </section >
+    </section>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
@@ -151,9 +152,9 @@ if($_SESSION['login']!="1"){
     <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
     <script src="assets/js/common-scripts.js"></script>
   <script>
-    //  $(function(){
-    //      $('select.styled').customSelect();
-    //  });
+      $(function(){
+          $('select.styled').customSelect();
+      });
 
   </script>
 
