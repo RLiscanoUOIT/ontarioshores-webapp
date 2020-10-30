@@ -7,6 +7,9 @@ require_once('dbconfig/config.php');
 require('vendor/autoload.php');
 // this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
 //aws php v3
+
+$IAM_KEY = 'AKIA5J2Q7BO35QB7WE74';
+$IAM_SECRET = '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';
 $s3 = new Aws\S3\S3Client(
   array(
     'credentials' => array(

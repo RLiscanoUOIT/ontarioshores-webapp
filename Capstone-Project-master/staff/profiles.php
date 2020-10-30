@@ -137,6 +137,10 @@ function make_audio($connect)
     }
     return $output;
 }
+function goBack() {
+  window.history.back();
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -213,8 +217,7 @@ function make_audio($connect)
  </head>
  <body  style="background-color:#919191">
 	<div class="links">
-    <a href="help4.html" target="_blank"><h3>Help</h3></a>
-    <a href="staff/private-album.php?id=<?php echo $profile;?>" target="_blank"><h3>Back</h3></a>
+    <button onclick="goBack()">Go Back</button>
     
 	</div>
   <br/>
