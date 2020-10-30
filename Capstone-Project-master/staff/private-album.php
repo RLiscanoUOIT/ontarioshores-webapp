@@ -102,7 +102,7 @@ if($_SESSION['login']!="1"){
                               while($row = mysqli_fetch_assoc($result2)) {
 
                                 $item = $row['album'];
-                                if($row['type']='picture'){
+                                if($row['type']=='picture'){
 
                                     $query = "SELECT link FROM new_media WHERE patientid='$profile' AND album='$item' LIMIT 1";
                                     $img = mysqli_query($connect, $query);
@@ -114,6 +114,22 @@ if($_SESSION['login']!="1"){
                                     <div class='col-auto mb-2'>
                                     <div class='card h-100 w-100'>
                                     <img src='$urlstr' class='card-img-top' alt='$urlstr'>
+                                    <div class='card-body'>
+                                    <a href='private-albumgallery.php?profileid=$profile&albumname=$item'>
+                                        <h5 class='card-title'>$item</h5></a>
+                                        <p class='card-text'><small class='text-muted'>46 Items</small>
+                                        <button class='btn btn-danger btn-s pull-right' onClick='return confirm('Do you really want to delete');'  a href='https://www.facebook.com/' >
+                                            <i class='fa fa-trash-o ' alt='Delete' title='Delete'></i></button></a></p>
+                                    </div>
+                                    </div>
+                                    </div>";
+                                }
+                                else
+                                {
+                                    $opt .= "
+                                    <div class='col-auto mb-2'>
+                                    <div class='card h-100 w-100'>
+                                    <img src='https://ichef.bbci.co.uk/news/400/cpsprodpb/26AC/production/_107000990_grumpycat5.jpg' class='card-img-top' alt='https://ichef.bbci.co.uk/news/400/cpsprodpb/26AC/production/_107000990_grumpycat5.jpg'>
                                     <div class='card-body'>
                                     <a href='private-albumgallery.php?profileid=$profile&albumname=$item'>
                                         <h5 class='card-title'>$item</h5></a>
