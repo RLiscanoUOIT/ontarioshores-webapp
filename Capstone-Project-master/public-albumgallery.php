@@ -107,10 +107,11 @@ $_SESSION['galleryDataURL'] = $urls;
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
     <title>Staff | Private Album</title>
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="admin/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="admin/assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/style-responsive.css" rel="stylesheet">
+    <link href="admin/assets/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   </head>
 
    <!-- topbar -->
@@ -157,7 +158,7 @@ $_SESSION['galleryDataURL'] = $urls;
 
       <section id="main-content">
           <section class="wrapper">
-             <h3><i class="fa fa-angle-right"></i> Public Album</h3>
+            <h3><i class="fa fa-angle-right"></i> Public Album </h3>
           	<h3><i class="fa fa-angle-right"></i> <?php echo$albumname?> </h3>
 
                 <form action="secondpage.php" method="post">
