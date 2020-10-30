@@ -72,7 +72,7 @@ if($_SESSION['login']!="1"){
 				   <li class="sub-menu">
                       <a href="manage-staff.php" >
                           <i class="fa fa-users"></i>
-                          <span>Manage Staff</span>
+                          <span>Manage Therapists</span>
                       </a>
                   </li>
 				  
@@ -87,7 +87,7 @@ if($_SESSION['login']!="1"){
       </aside>
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Manage Staff</h3>
+          	<h3><i class="fa fa-angle-right"></i> Manage Therapists</h3>
 				<div class="row">
 
 
@@ -95,9 +95,9 @@ if($_SESSION['login']!="1"){
                   <div class="col-md-12">
                       <div class="content-panel">
                           <table class="table table-striped table-advance table-hover">
-	                  	  	  <h4><i class="fa fa-angle-right"></i> All Staff Details </h4>
+	                  	  	  <h4><i class="fa fa-angle-right"></i> All Therapist Details </h4>
 							  <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="new-staff.php" style="margin-top:-35px";>Add Staff</a></li>
+                    <li><a class="logout" href="new-staff.php" style="margin-top:-35px";>Add Therapist</a></li>
             	</ul>
 							  
 	                  	  	  <hr>

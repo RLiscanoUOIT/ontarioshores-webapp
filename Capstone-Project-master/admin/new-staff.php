@@ -103,7 +103,7 @@ if($_SESSION['login']!="1"){
 				   <li class="sub-menu">
                       <a href="manage-staff.php" >
                           <i class="fa fa-users"></i>
-                          <span>Manage Staff</span>
+                          <span>Manage Therapists</span>
                       </a>
                   </li>
 				  
@@ -119,7 +119,7 @@ if($_SESSION['login']!="1"){
 
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Staff Sign Up Form</h3>
+          	<h3><i class="fa fa-angle-right"></i> Therapist Sign Up Form</h3>
 
 				<div class="row">
 

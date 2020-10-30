@@ -75,7 +75,7 @@ if($_SESSION['login']!="1"){
 				   <li class="sub-menu">
                       <a href="manage-staff.php" >
                           <i class="fa fa-users"></i>
-                          <span>Manage Staff</span>
+                          <span>Manage Therapists</span>
                       </a>
                   </li>
 				  
