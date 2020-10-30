@@ -137,9 +137,6 @@ function make_audio($connect)
     }
     return $output;
 }
-function goBack() {
-  window.history.back();
-}
 
 
 ?>
@@ -175,6 +172,9 @@ function goBack() {
 		$("#dynamic_slide_show3").carousel('pause');
 	});
   });
+  function goBack() {
+  window.history.back();
+}
   </script>
 
   <style>
@@ -216,10 +216,7 @@ function goBack() {
   </style>
  </head>
  <body  style="background-color:#919191">
-	<div class="links">
-    <button onclick="goBack()">Go Back</button>
-    
-	</div>
+  <button onclick="goBack()">Back</button>
   <br/>
   <?php $profile = $_GET['profileid'];
   $query = "SELECT fname FROM patient WHERE id='$profile'";
