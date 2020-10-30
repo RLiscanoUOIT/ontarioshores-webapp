@@ -102,26 +102,28 @@ if($_SESSION['login']!="1"){
                               while($row = mysqli_fetch_assoc($result2)) {
 
                                 $item = $row['album'];
+                                if($row['type']='picture'){
 
-                                $query = "SELECT link FROM new_media WHERE patientid='$profile' AND album='$item' AND type='picture'LIMIT 1";
-                                $img = mysqli_query($connect, $query);
-                                $url = mysqli_fetch_assoc($img);
-                                $urlstr = $url['link'];
-                            
+                                    $query = "SELECT link FROM new_media WHERE patientid='$profile' AND album='$item' LIMIT 1";
+                                    $img = mysqli_query($connect, $query);
+                                    $url = mysqli_fetch_assoc($img);
+                                    $urlstr = $url['link'];
+                                
 
-                                $opt .= "
-                                <div class='col-auto mb-2'>
-                                <div class='card h-100 w-100'>
-                                  <img src='$urlstr' class='card-img-top' alt='$urlstr'>
-                                  <div class='card-body'>
-                                  <a href='private-albumgallery.php?profileid=$profile&albumname=$item'>
-                                    <h5 class='card-title'>$item</h5></a>
-                                    <p class='card-text'><small class='text-muted'>46 Items</small>
-                                    <button class='btn btn-danger btn-s pull-right' onClick='return confirm('Do you really want to delete');'  a href='https://www.facebook.com/' >
-                                          <i class='fa fa-trash-o ' alt='Delete' title='Delete'></i></button></a></p>
-                                  </div>
-                                </div>
-                                </div>";
+                                    $opt .= "
+                                    <div class='col-auto mb-2'>
+                                    <div class='card h-100 w-100'>
+                                    <img src='$urlstr' class='card-img-top' alt='$urlstr'>
+                                    <div class='card-body'>
+                                    <a href='private-albumgallery.php?profileid=$profile&albumname=$item'>
+                                        <h5 class='card-title'>$item</h5></a>
+                                        <p class='card-text'><small class='text-muted'>46 Items</small>
+                                        <button class='btn btn-danger btn-s pull-right' onClick='return confirm('Do you really want to delete');'  a href='https://www.facebook.com/' >
+                                            <i class='fa fa-trash-o ' alt='Delete' title='Delete'></i></button></a></p>
+                                    </div>
+                                    </div>
+                                    </div>";
+                                }
 
                               }
                           ?>
