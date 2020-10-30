@@ -103,38 +103,39 @@ if(isset($_POST['upload']))
         <div class="row">
           <div class="col-md-12">
               <div class="content-panel">
-        <form enctype="multipart/form-data" action="<?=$_SERVER['PHP_SELF']?>" method="POST" style="padding-left:1%; margin-top:-3.5%; padding-bottom:1%"><br><br>
+        <form enctype="multipart/form-data" method="POST" action="<?=$_SERVER['PHP_SELF']?>"  style="padding-left:1%; margin-top:-3.5%; padding-bottom:1%"><br><br>
 <?php
 //ensures file is corrected selected
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name'])) {
-try {
-	//uploads file to amazon AWS bucket
-$upload = //$s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
-          $s3->putObject([
-            'Bucket' => $bucket,
-            'Key'    => $_FILES['userfile']['name'],
-            'SourceFile'   => fopen($_FILES['userfile']['tmp_name'],'rb'),
-            'ACL'    => 'public-read',
-            'StorageClass' => 'REDUCED_REDUNDANCY'
-            ]);
+
+  try {
+        //uploads file to amazon AWS bucket
+      $upload = //$s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
+                $s3->putObject([
+                  'Bucket' => $bucket,
+                  'Key'    => basename($_FILES['userfile']['name']),
+                  'SourceFile'   => $_FILES['userfile']['tmp_name'],
+                  'ACL'    => 'public-read',
+                  'StorageClass' => 'REDUCED_REDUNDANCY'
+                  ]);
 
 
-	//gets input field values and file link to update db
-$tmplink = $_FILES['userfile']['name'];
-$link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
-	$album=$_POST['album'];
-	$filelink=$_POST['link'];
-	$patientid=$_POST['patientid'];
-	$tags=$_POST['tags'];
-	$type=$_POST['type'];
-	$query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags',privacy='private'");	
-	if($query)
-		{
-		echo "<script>alert('Media Added');</script>";
-		}
-	
-		header( "Location: staff/manage-patients.php");
-?>
+        //gets input field values and file link to update db
+      $tmplink = $_FILES['userfile']['name'];
+      $link = "https://os-webapp1.s3.amazonaws.com/" . $tmplink;
+        $album=$_POST['album'];
+        $filelink=$_POST['link'];
+        $patientid=$_POST['patientid'];
+        $tags=$_POST['tags'];
+        $type=$_POST['type'];
+        $query=mysqli_query($con,"INSERT new_media SET link='$link', type='$type', patientid='$patientid', album='$album', tags='$tags',privacy='private'");	
+        if($query)
+          {
+          echo "<script>alert('Media Added');</script>";
+          }
+        
+          header( "Location: staff/manage-patients.php");
+      ?>
 
 <?php } catch(Exception $e) { ?>
 <p>Upload error sorry dont cry:(</p>
