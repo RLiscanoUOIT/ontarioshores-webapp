@@ -225,7 +225,9 @@ ul.top-menu > li > .logout {
 	padding: 5px 15px;
 	margin-right: 15px;
 	background: #424a5d;
-	margin-top: 15px;
+    margin-top: 15px;
+    position: relative;
+    display: block;
 }
 
 
