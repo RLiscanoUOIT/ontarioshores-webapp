@@ -51,7 +51,7 @@ if($_SESSION['login']!="1"){
 	  <!-- logout button -->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="logout.php" style="margin-top:-35px">Logout</a></li>
+                    <li><a class="logout" href="logout.php">Logout</a></li>
             	</ul>
             </div>
         </header>
