@@ -161,8 +161,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES
     <input type="submit" name="upload" value="Upload">
 		      </form>
 
-<a href="albumspat.php?uid=<?php echo $row['id'];?>">
-<button class="btn btn-success btn-xl" style="margin-left: 85em;margin-top: -5em;padding-left:1.7em;padding-right:1.7em;"><i class="fa fa-play"></i></button></a>
+<!-- <a href="albumspat.php?uid=<?php echo $row['id'];?>">
+<button class="btn btn-success btn-xl" style="margin-left: 85em;margin-top: -5em;padding-left:1.7em;padding-right:1.7em;"><i class="fa fa-play"></i></button></a> -->
 </div></div>
 </div>
 </section>
