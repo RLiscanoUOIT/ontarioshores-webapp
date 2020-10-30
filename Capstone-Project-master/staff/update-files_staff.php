@@ -100,7 +100,7 @@ try {
 	//uploads file to amazon AWS bucket
 $upload = $s3->putObject([
         'Bucket' => $bucket,
-        'Key'    => $keyname,
+        'Key'    => $_FILES['userfile']['name'],
         'Body'   => fopen($_FILES['userfile']['tmp_name'],'rb'),
         'ACL'    => 'public-read'
         ]);

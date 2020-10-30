@@ -112,7 +112,7 @@ try {
 $upload = //$s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
           $s3->putObject([
             'Bucket' => $bucket,
-            'Key'    => $keyname,
+            'Key'    => $_FILES['userfile']['name'],
             'Body'   => fopen($_FILES['userfile']['tmp_name'],'rb'),
             'ACL'    => 'public-read'
             ]);
