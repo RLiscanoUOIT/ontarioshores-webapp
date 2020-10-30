@@ -95,7 +95,7 @@ if($_SESSION['login']!="1"){
                         <div class="card-deck">
 
                         <?php
-                            $sql = "SELECT DISTINCT album FROM new_media WHERE patientid='$profile' AND type='picture'";
+                            $sql = "SELECT DISTINCT album FROM new_media WHERE patientid='$profile'";
                             $result2 = mysqli_query($connect, $sql);
                             $opt = "";
 
@@ -103,10 +103,11 @@ if($_SESSION['login']!="1"){
 
                                 $item = $row['album'];
 
-                                $query = "SELECT link FROM new_media WHERE patientid='$profile' AND album='$item' LIMIT 1";
+                                $query = "SELECT link FROM new_media WHERE patientid='$profile' AND album='$item' AND type='picture'LIMIT 1";
                                 $img = mysqli_query($connect, $query);
                                 $url = mysqli_fetch_assoc($img);
                                 $urlstr = $url['link'];
+                            
 
                                 $opt .= "
                                 <div class='col-auto mb-2'>
