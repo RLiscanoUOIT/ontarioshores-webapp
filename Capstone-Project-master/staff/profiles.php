@@ -8,134 +8,134 @@ $connect = mysqli_connect("us-cdbr-iron-east-04.cleardb.net", "bc9da719e482f3", 
 
 function picture_query($connect)
 {
- $profile = $_GET['profileid'];
- $album = $_GET['albumname'];
- $query = "SELECT * FROM new_media WHERE type='picture' AND patientid='$profile' AND album='$album' ORDER BY id ASC";
- $result = mysqli_query($connect, $query);
- return $result;
+    $profile = $_GET['profileid'];
+    $album = $_GET['albumname'];
+    $query = "SELECT * FROM new_media WHERE type='picture' AND patientid='$profile' AND album='$album' ORDER BY id ASC";
+    $result = mysqli_query($connect, $query);
+    return $result;
 }
 
 function video_query($connect)
 {
- $profile = $_GET['profileid'];
- $album = $_GET['albumname'];
- $query = "SELECT * FROM new_media WHERE type='video' AND patientid='$profile' AND album='$album' ORDER BY id ASC"; 
- $result = mysqli_query($connect, $query);
- return $result;
+    $profile = $_GET['profileid'];
+    $album = $_GET['albumname'];
+    $query = "SELECT * FROM new_media WHERE type='video' AND patientid='$profile' AND album='$album' ORDER BY id ASC"; 
+    $result = mysqli_query($connect, $query);
+    return $result;
 }
 
 function audio_query($connect)
 {
- $profile = $_GET['profileid'];
- $album = $_GET['albumname'];
- $query = "SELECT * FROM new_media WHERE type='music' AND patientid='$profile' AND album='$album' ORDER BY id ASC"; 
- $result = mysqli_query($connect, $query);
- return $result;
+    $profile = $_GET['profileid'];
+    $album = $_GET['albumname'];
+    $query = "SELECT * FROM new_media WHERE type='music' AND patientid='$profile' AND album='$album' ORDER BY id ASC"; 
+    $result = mysqli_query($connect, $query);
+    return $result;
 }
 
 function make_slide_indicators($connect)
 {
- $output = '';
- $count = 0;
- $result = picture_query($connect);
- while($row = mysqli_fetch_array($result))
- {
-  if($count == 0)
-  {
-   $output .= '
-   <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'" class="active"></li>
-   ';
-  }
-  else
-  {
-   $output .= '
-   <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'"></li>
-   ';
-  }
-  $count = $count + 1;
- }
- return $output;
+    $output = '';
+    $count = 0;
+    $result = picture_query($connect);
+    while($row = mysqli_fetch_array($result))
+    {
+        if($count == 0)
+        {
+        $output .= '
+        <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'" class="active"></li>
+        ';
+        }
+        else
+        {
+        $output .= '
+        <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'"></li>
+        ';
+        }
+        $count = $count + 1;
+    }
+    return $output;
 }
 
 function make_slides($connect)
 {
- $output = '';
- $count = 0;
- $result = picture_query($connect);
- while($row = mysqli_fetch_array($result))
- {
-  if($count == 0)
-  {
-   $output .= '<div class="item active">';
-  }
-  else
-  {
-   $output .= '<div class="item">';
-  }
-  $output .= '
-   <img src="'.$row["link"].'" alt="'.$row["id"].'" style="margin:auto;width:800px;height:700px;"/>
-   <div class="carousel-caption">
-    <h3></h3>
-   </div>
-  </div>
-  ';
-  $count = $count + 1;
- }
- return $output;
+    $output = '';
+    $count = 0;
+    $result = picture_query($connect);
+    while($row = mysqli_fetch_array($result))
+    {
+        if($count == 0)
+        {
+        $output .= '<div class="item active">';
+        }
+        else
+        {
+        $output .= '<div class="item">';
+        }
+        $output .= '
+        <img src="'.$row["link"].'" alt="'.$row["id"].'" style="margin:auto;width:800px;height:700px;"/>
+        <div class="carousel-caption">
+          <h3></h3>
+        </div>
+        </div>
+        ';
+        $count = $count + 1;
+    }
+    return $output;
 }
 
 function make_video($connect)
 {
- $output = '';
- $count = 0;
- $result = video_query($connect);
- while($row = mysqli_fetch_array($result))
- {
-  if($count == 0)
-  {
-   $output .= '<div class="item active">';
-  }
-  else
-  {
-   $output .= '<div class="item">';
-  }
-  $output .= '
-   <video src="data/'.$row["link"].'" alt="'.$row["id"].'" class="vid" controls/>
-   <div class="carousel-caption">
-    <h3>'.$row["link"].'</h3>
-   </div>
-  </div>
-  ';
-  $count = $count + 1;
- }
- return $output;
+    $output = '';
+    $count = 0;
+    $result = video_query($connect);
+    while($row = mysqli_fetch_array($result))
+    {
+        if($count == 0)
+        {
+        $output .= '<div class="item active">';
+        }
+        else
+        {
+        $output .= '<div class="item">';
+        }
+        $output .= '
+        <video src="data/'.$row["link"].'" alt="'.$row["id"].'" class="vid" controls/>
+        <div class="carousel-caption">
+          <h3>'.$row["link"].'</h3>
+        </div>
+        </div>
+        ';
+        $count = $count + 1;
+    }
+    return $output;
 }
 
 function make_audio($connect)
 {
- $output = '';
- $count = 0;
- $result = audio_query($connect);
- while($row = mysqli_fetch_array($result))
- {
-  if($count == 0)
-  {
-   $output .= '<div class="item active">';
-  }
-  else
-  {
-   $output .= '<div class="item">';
-  }
-  $output .= '
-   <audio controls src="data/'.$row["link"].'" alt="'.$row["id"].'" class=""/>
-   <div class="carousel-caption">
-    <h3>'.$row["link"].'</h3>
-   </div>
-  </div>
-  ';
-  $count = $count + 1;
- }
- return $output;
+    $output = '';
+    $count = 0;
+    $result = audio_query($connect);
+    while($row = mysqli_fetch_array($result))
+    {
+          if($count == 0)
+          {
+          $output .= '<div class="item active">';
+          }
+          else
+          {
+          $output .= '<div class="item">';
+          }
+          $output .= '
+          <audio controls src="data/'.$row["link"].'" alt="'.$row["id"].'" class=""/>
+          <div class="carousel-caption">
+            <h3>'.$row["link"].'</h3>
+          </div>
+          </div>
+          ';
+          $count = $count + 1;
+    }
+    return $output;
 }
 
 ?>
@@ -172,38 +172,39 @@ function make_audio($connect)
 	});
   });
   </script>
+
   <style>
-	.box{
-		width: 70%;
-		height: 200px;
-		margin:auto;}
-	.begin1{
-		height: 50px;
-		width: 50px;}
-	.pause1{
-		height: 50px;
-		width: 50px;}		
-	.begin2{
-		height: 50px;
-		width: 50px;}
-	.pause2{
-		height: 50px;
-		width: 50px;}
-	.begin3{
-		height: 50px;
-		width: 50px;}
-	.pause3{
-		height: 50px;
-		width: 50px;}
-	.control{
-		width: 10%;
-		margin:auto;}
-	.vid{
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 50%;}
-	.links{
+      .box{
+        width: 70%;
+        height: 200px;
+        margin:auto;}
+      .begin1{
+        height: 50px;
+        width: 50px;}
+      .pause1{
+        height: 50px;
+        width: 50px;}		
+      .begin2{
+        height: 50px;
+        width: 50px;}
+      .pause2{
+        height: 50px;
+        width: 50px;}
+      .begin3{
+        height: 50px;
+        width: 50px;}
+      .pause3{
+        height: 50px;
+        width: 50px;}
+      .control{
+        width: 10%;
+        margin:auto;}
+      .vid{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;}
+      .links{
 		position:absolute;
 		top:0;
 		right:0;
@@ -212,9 +213,11 @@ function make_audio($connect)
  </head>
  <body  style="background-color:#919191">
 	<div class="links">
-		<a href="help4.html" target="_blank"><h3>Help</h3></a>
+    <a href="help4.html" target="_blank"><h3>Help</h3></a>
+    <a href="staff/private-album.php?id=<?php echo $profile;?>" target="_blank"><h3>Back</h3></a>
+    
 	</div>
-  <br />
+  <br/>
   <?php $profile = $_GET['profileid'];
   $query = "SELECT fname FROM patient WHERE id='$profile'";
   $result = mysqli_query($connect, $query);
