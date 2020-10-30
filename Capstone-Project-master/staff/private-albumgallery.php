@@ -44,7 +44,7 @@ $profile = $_GET['profileid'];
 $albumname = $_GET['albumname'];
 
 // we want to get the associated image paths from the db
-$query = "SELECT id, link FROM new_media WHERE patientid=? AND album=? AND type=?";
+$query = "SELECT id, link FROM new_media WHERE patientid=? AND album=?";
 $stmt = $mysqli->prepare($query);
 
 if($stmt == FALSE) {
