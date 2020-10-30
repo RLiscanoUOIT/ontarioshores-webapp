@@ -109,7 +109,7 @@ $_SESSION['galleryDataURL'] = $urls;
     <title>Staff | Private Album</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="../admin/assets/css/style.css" rel="stylesheet">
+    <link href="admin/assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
   </head>
 
@@ -136,16 +136,16 @@ $_SESSION['galleryDataURL'] = $urls;
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu" id="nav-accordion">
 
-              <p class="centered"><a href="#"><img src="assets/img/logo100.png" width="125"></a></p>
+              <p class="centered"><a href="#"><img src="admin/assets/img/logo100.png" width="125"></a></p>
   	 
                   <li class="sub-menu">
-                      <a href="manage-patients.php" >
+                      <a href="staff/manage-patients.php" >
                           <i class="fa fa-users"></i>
                           <span>Manage Patients</span>
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="../public-album.php" >
+                      <a href="public-album.php" >
                           <i class="fa fa-image"></i>
                           <span>Public Album</span>
                       </a>
@@ -157,7 +157,7 @@ $_SESSION['galleryDataURL'] = $urls;
 
       <section id="main-content">
           <section class="wrapper">
-            <h2>Public Album</h2>
+             <h3><i class="fa fa-angle-right"></i> Public Album</h3>
           	<h3><i class="fa fa-angle-right"></i> <?php echo$albumname?> </h3>
 
                 <form action="secondpage.php" method="post">
