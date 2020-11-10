@@ -179,7 +179,7 @@ $_SESSION['galleryDataURL'] = $urls;
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="../public-album.php" >
+                      <a href="../public-album.php">
                           <i class="fa fa-image"></i>
                           <span>Public Album</span>
                       </a>
