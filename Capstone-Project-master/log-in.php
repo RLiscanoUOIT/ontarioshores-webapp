@@ -81,7 +81,7 @@
 				<input type="password" placeholder="Enter Password" name="password" required>
 				<button class="login_button" name="login" type="submit">Login</button>
 				<a href="frontpage.php"><button type="button" class="back_btn">Back</button></a>
-				<p><a href="forget-password.php" text-align: right;>forgot password</a></p>
+				<p style="text-align:right;"><a href="forget-password.php" style="text-align: right">forgot password</a></p>
 			</div>
 		</form>
 	</div>
