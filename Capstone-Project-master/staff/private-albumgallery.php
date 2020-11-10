@@ -17,6 +17,7 @@ function emitCheckboxEntry($seqnumber, $url, $type)
 	$output .= "<input type='checkbox' id='".$id."' name='".$name."' value = '".$seqnumber."' />";
 	$output .= PHP_EOL;
     $output .= "<label for='".$id."'>";
+
     if($type=="picture")
     {
         $output .= "<img class='gallery' src='".$url."' />";
@@ -27,8 +28,9 @@ function emitCheckboxEntry($seqnumber, $url, $type)
     }
     else if($type=="audio")
     {
-        $output .= "<img class='fa-file-video' />";
+        $output .= "<img class='fa fa-file-video' />";
     }
+
 	$output .= "</label>";
 	$output .= "</li>";
 
