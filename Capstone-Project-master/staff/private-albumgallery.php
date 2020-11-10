@@ -27,7 +27,7 @@ function emitCheckboxEntry($seqnumber, $url, $type)
     }
     else if($type=="audio")
     {
-        $output .= "<i class='fa-file-video'></i>";
+        $output .= "<img class='fa-file-video' />";
     }
 	$output .= "</label>";
 	$output .= "</li>";
