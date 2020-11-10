@@ -2,13 +2,18 @@
 	session_start();
     require_once('dbconfig/config.php');
     
-    $to = "gelanrie@gmail.com";
-    $subject = "My subject";
-    $txt = "Hello world!";
-    $headers = "From: webmaster@example.com" . "\r\n" .
-    "CC: somebodyelse@example.com";
-
-    mail($to,$subject,$txt,$headers);
+    require 'vendor/autoload.php';
+    use Mailgun\Mailgun;
+    # Instantiate the client.
+    $mgClient = new Mailgun('45a491a47b86ebd89d61c117a77419bd-ba042922-0a659b6c');
+    $domain = " https://api.mailgun.net/v3/sandboxd0bf7749383345cda13d2f1458f1c2c3.mailgun.org";
+    # Make the call to the client.
+    $result = $mgClient->sendMessage($domain, array(
+        'from'	=> 'Excited User <gelanrie@gmail.com>',
+        'to'	=> 'Baz <angela.tabafunda@ontariotechu.net>',
+        'subject' => 'Hello',
+        'text'	=> 'Testing some Mailgun awesomness!'
+    ));
    
 ?>
 
