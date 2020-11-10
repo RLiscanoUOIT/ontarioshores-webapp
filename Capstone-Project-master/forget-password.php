@@ -3,21 +3,33 @@
     require_once('dbconfig/config.php');
   
  
-    require 'PHPMailerAutoload.php';
-    $mail = new PHPMailer;
-    $mail->setFrom('angela.tabafunda@ontariotechu.net', 'angela');
-    $mail->addAddress('myfriend@example.net', 'My Friend');
-    $mail->Subject  = 'First PHPMailer Message';
-    $mail->Body     = 'Hi! This is my first e-mail sent through PHPMailer.';
-    if(!$mail->send()) {
-    echo 'Message was not sent.';
-    echo 'Mailer error: ' . $mail->ErrorInfo;
-    } 
-    else {
-        echo 'Message has been sent.';
-    }
-    
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    require 'vendor\autoload.php';
+
+    /* Create a new PHPMailer object. */
+    $mail = new PHPMailer();
+
+    /* Set the mail sender. */
+    $mail->setFrom('angela.tabafunda@ontariotechu.net', 'Darth Vader');
+
+    /* Add a recipient. */
+    $mail->addAddress('angela.tabafunda@ontariotechu.net', 'Emperor');
+
+    /* Set the subject. */
+    $mail->Subject = 'Force';
+
+    /* Set the mail message body. */
+    $mail->Body = 'There is a great disturbance in the Force.';
+
+    /* Finally send the mail. */
+    if (!$mail->send())
+    {
+    /* PHPMailer error. */
+    echo $mail->ErrorInfo;
+    }  
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
