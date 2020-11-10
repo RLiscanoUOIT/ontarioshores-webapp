@@ -49,7 +49,7 @@ if($_SESSION['login']!="1"){
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <a class="logout" href="logout.php">Logout</a>
+                    <li><a class="logout" href="logout.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -86,8 +86,8 @@ if($_SESSION['login']!="1"){
                       <div class="content-panel">
                         <h4>  <?php echo ucfirst($valuefname)." " .ucfirst($valuelname). "'s "; ?>Album Collection </h4>
                         <ul class="nav pull-right top-menu">
-                        <li><a class="logout" href="update-files_staff.php" style="margin-top:-35px";>View Profile</a></li>
-                        <li><a class="logout" href="#" style="margin-top:-35px";>Upload Media</a></li>
+                        <li><a class="logout" href="#" style="margin-top:-35px";>View Profile</a></li>
+                        <li><a class="logout" href="update-files_staff.phpp" style="margin-top:-35px";>Upload Media</a></li>
                         </ul>
                         <br>
                         <br>
