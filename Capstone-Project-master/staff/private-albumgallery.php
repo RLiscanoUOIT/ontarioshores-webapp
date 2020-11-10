@@ -214,7 +214,6 @@ $_SESSION['galleryDataURL'] = $urls;
                 <input type="submit" name="submitButton" value="Play From First Selected" /> 
                 <br/>
                 <ul class="gallery">
-                    <br/>
                 <?php
                     echo $galleryHtml;
                 ?>

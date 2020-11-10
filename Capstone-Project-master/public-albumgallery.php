@@ -213,7 +213,7 @@ $_SESSION['galleryDataURL'] = $urls;
                 <input type="submit" name="submitButton" value="Delete" />
                 
                 <input type="submit" name="submitButton" value="Play From First Selected" /> 
-                <br/>
+                <br>
                 <ul class="gallery">
                 <?php
                     echo $galleryHtml;
