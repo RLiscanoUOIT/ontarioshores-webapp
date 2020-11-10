@@ -1,33 +1,15 @@
 <?php
 	session_start();
     require_once('dbconfig/config.php');
-  
- 
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-    require 'vendor\autoload.php';
+    
+    $to = "angela.tabafunda@ontariotechu.net";
+    $subject = "My subject";
+    $txt = "Hello world!";
+    $headers = "From: webmaster@example.com" . "\r\n" .
+    "CC: somebodyelse@example.com";
 
-    /* Create a new PHPMailer object. */
-    $mail = new PHPMailer();
-
-    /* Set the mail sender. */
-    $mail->setFrom('angela.tabafunda@ontariotechu.net', 'Darth Vader');
-
-    /* Add a recipient. */
-    $mail->addAddress('angela.tabafunda@ontariotechu.net', 'Emperor');
-
-    /* Set the subject. */
-    $mail->Subject = 'Force';
-
-    /* Set the mail message body. */
-    $mail->Body = 'There is a great disturbance in the Force.';
-
-    /* Finally send the mail. */
-    if (!$mail->send())
-    {
-    /* PHPMailer error. */
-    echo $mail->ErrorInfo;
-    }  
+    mail($to,$subject,$txt,$headers);
+   
 ?>
 
 <!DOCTYPE html>
