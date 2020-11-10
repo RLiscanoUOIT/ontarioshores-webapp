@@ -80,6 +80,13 @@ input{
     padding: 10px;
     background-color: #e67e22;
 }
+.reset_btn{
+	margin-top:10px;
+	color: white;
+	margin-bottom:15px;
+    padding: 10px;
+    background-color:  #3498db;
+}
 .logout_button{
 	background-color: #c0392b;
     color: white;
