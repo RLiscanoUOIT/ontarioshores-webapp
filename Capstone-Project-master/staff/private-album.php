@@ -49,7 +49,7 @@ if($_SESSION['login']!="1"){
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <a class="logout" href="logout.php" style="margin-top:-35px">Logout</a>
+                    <a class="logout" href="logout.php">Logout</a>
             	</ul>
             </div>
         </header>
