@@ -111,7 +111,7 @@ if($_SESSION['login']!="1"){
                                 <div class='card h-100 w-100'>
                                   <img src='$urlstr' class='card-img-top' alt='$urlstr'>
                                   <div class='card-body'>
-                                  <a href='public-albumgallery.php?profileid=$profile&albumname=$item'>
+                                  <a href='public-albumgallery.php?profileid=0&albumname=$item'>
                                     <h5 class='card-title'>$item</h5></a>
                                 
                                   </div>
