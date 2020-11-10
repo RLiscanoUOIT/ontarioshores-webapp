@@ -23,11 +23,11 @@ function emitCheckboxEntry($seqnumber, $url, $type)
     }
     else if($type=="video")
     {
-        $output .= "<img class='gallery' src='https://www.pinclipart.com/picdir/middle/163-1633379_video-file-icon-video-file-icon-png-clipart.png' />";
+        $output .= "<img class='gallery' src='' />";
     }
     else if($type=="audio")
     {
-        $output .= "<i class='far fa-file-video'></i>";
+        $output .= "<i class='fa-file-video'></i>";
     }
 	$output .= "</label>";
 	$output .= "</li>";
