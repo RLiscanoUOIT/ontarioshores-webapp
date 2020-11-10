@@ -4,6 +4,18 @@
 
 session_start(); 
 
+function after_last ($h, $inthat)
+{
+    if (!is_bool(strrevpos($inthat, $h)))
+    return substr($inthat, strrevpos($inthat, $h)+strlen($h));
+}
+function strrevpos($instr, $needle)
+{
+    $rev_pos = strpos (strrev($instr), strrev($needle));
+    if ($rev_pos===false) return false;
+    else return strlen($instr) - $rev_pos - strlen($needle);
+}
+
 // function for the list items
 // sequence number -> url string -> html list item
 function emitCheckboxEntry($seqnumber, $url)
@@ -17,7 +29,25 @@ function emitCheckboxEntry($seqnumber, $url)
 	$output .= "<input type='checkbox' id='".$id."' name='".$name."' value = '".$seqnumber."' />";
 	$output .= PHP_EOL;
     $output .= "<label for='".$id."'>";
-	$output .= "<img class='gallery' src='".$url."' />";
+    
+    if($type=="picture")
+    {
+        $output .= "<img class='gallery' src='".$url."' />";
+    }
+    else if($type=="video")
+    {
+        $output .= "<i class='fa fa-file-video-o fa-5x'></i>";
+        $filename = after_last ('/', $url);
+        $output .= "<br><h7 text-align: center;>".$filename."</h7>";
+    }
+    else if($type=="audio")
+    {
+        $output .= "<i class='fa fa-file-audio-o fa-5x'></i>";
+        $filename = after_last ('/', $url);
+        $output .= "<br><h7 text-align: center;>".$filename."</h7>";
+
+    }
+
 	$output .= "</label>";
 	$output .= "</li>";
 
@@ -158,8 +188,8 @@ $_SESSION['galleryDataURL'] = $urls;
 
       <section id="main-content">
           <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Public Album </h3>
-          	<h3><i class="fa fa-angle-right"></i> <?php echo$albumname?> </h3>
+            <h3><i class="fa fa-angle-right"></i> Public Album  </h3>
+          	<h4><i class="fa fa-angle-right"></i> <?php echo$albumname?> </h4>
 
                 <form action="secondpage.php" method="post">
             

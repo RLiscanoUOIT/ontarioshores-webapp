@@ -73,7 +73,7 @@ if(isset($_POST['submit']))
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="../pub-album.php" >
+                      <a href="../public-album.php?uid=<?php echo 0;?>" >
                           <i class="fa fa-image"></i>
                           <span>Public Album</span>
                       </a>
