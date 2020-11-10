@@ -24,11 +24,14 @@ function emitCheckboxEntry($seqnumber, $url, $type)
     }
     else if($type=="video")
     {
-        $output .= "<img class='gallery' src='' />";
+        $output .= "<i class='fa fa-file-video-o fa-5x'></i>";
+        $output .= "<h4>'$url'</h4>";
     }
     else if($type=="audio")
     {
-        $output .= "<img class='fa fa-file-video-o' />";
+        $output .= "<i class='fa file-audio-o fa-5x'></i>";
+        $output .= "<h4>'$url'</h4>";
+
     }
 
 	$output .= "</label>";
