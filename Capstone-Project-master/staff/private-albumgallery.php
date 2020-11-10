@@ -6,7 +6,7 @@ session_start();
 
 // function for the list items
 // sequence number -> url string -> html list item
-function emitCheckboxEntry($seqnumber, $url)
+function emitCheckboxEntry($seqnumber, $url, $type)
 {
     $name = "gallery[]";
     $id = "cb" . $seqnumber;
@@ -17,7 +17,14 @@ function emitCheckboxEntry($seqnumber, $url)
 	$output .= "<input type='checkbox' id='".$id."' name='".$name."' value = '".$seqnumber."' />";
 	$output .= PHP_EOL;
     $output .= "<label for='".$id."'>";
-	$output .= "<img class='gallery' src='".$url."' />";
+    if($type=="video")
+    {
+        $output .= "<img class='gallery' src='".$url."' />";
+    }
+    else if($type=="picture")
+    {
+        $output .= "<img class='gallery' src='https://w7.pngwing.com/pngs/54/897/png-transparent-computer-icons-audio-file-format-wav-audio-miscellaneous-text-audio-file-format.png' />";
+    }
 	$output .= "</label>";
 	$output .= "</li>";
 
@@ -44,7 +51,7 @@ $profile = $_GET['profileid'];
 $albumname = $_GET['albumname'];
 
 // we want to get the associated image paths from the db
-$query = "SELECT id, link FROM new_media WHERE patientid=? AND album=?";
+$query = "SELECT id, link AND type FROM new_media WHERE patientid=? AND album=?";
 $stmt = $mysqli->prepare($query);
 
 if($stmt == FALSE) {
@@ -53,22 +60,24 @@ if($stmt == FALSE) {
     exit(-2);
 }
 
-$stmt->bind_param('is', $profile, $albumname,);
+$stmt->bind_param('is', $profile, $albumname);
 $stmt->execute();
-$stmt->bind_result($id, $url);
+$stmt->bind_result($id, $url,$type);
 
 $ids = [];
 $urls = [];
+$types=[];
 
 $counter = 0;
 while($stmt->fetch()) {
     array_push($ids, $id);
     array_push($urls, $url);
+    array_push($types, $type);
 }
 $stmt->close();
 
 // gallery list presentation
-$galleryContents = array_map('emitCheckboxEntry', array_keys($urls), $urls);
+$galleryContents = array_map('emitCheckboxEntry', array_keys($urls), $urls, $types);
 $galleryHtml = array_reduce($galleryContents, 'mergeStrings');
 
 // now we want to get the list of available albums
