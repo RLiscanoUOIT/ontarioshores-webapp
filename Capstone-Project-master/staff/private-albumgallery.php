@@ -31,14 +31,14 @@ function emitCheckboxEntry($seqnumber, $url, $type)
     else if($type=="video")
     {
         $output .= "<i class='fa fa-file-video-o fa-5x'></i>";
-        $fname =after_last ('/', $url);
+        $fname = after_last ('/', $url);
         $output .= "<br><h7 text-align: center;>".$fname."</h7>";
     }
     else if($type=="audio")
     {
         $output .= "<i class='fa fa-file-audio-o fa-5x'></i>";
-        $fname =after_last ('/', $url);
-        $output .= "<br><h7 text-align: center;>".$fname."</h7>";
+        $fname = after_last ('/', $url);
+        $output .= "<br><h7 text-align: center;>".$url."</h7>";
 
     }
 
