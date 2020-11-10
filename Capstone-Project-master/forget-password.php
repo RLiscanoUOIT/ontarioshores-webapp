@@ -1,6 +1,22 @@
 <?php
 	session_start();
-	require_once('dbconfig/config.php');
+    require_once('dbconfig/config.php');
+  
+ 
+    require 'PHPMailerAutoload.php';
+    $mail = new PHPMailer;
+    $mail->setFrom('angela.tabafunda@ontariotechu.net', 'angela');
+    $mail->addAddress('myfriend@example.net', 'My Friend');
+    $mail->Subject  = 'First PHPMailer Message';
+    $mail->Body     = 'Hi! This is my first e-mail sent through PHPMailer.';
+    if(!$mail->send()) {
+    echo 'Message was not sent.';
+    echo 'Mailer error: ' . $mail->ErrorInfo;
+    } 
+    else {
+        echo 'Message has been sent.';
+    }
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -81,7 +97,6 @@
 				<input type="password" placeholder="Enter Password" name="password" required>
 				<button class="login_button" name="login" type="submit">Login</button>
 				<a href="frontpage.php"><button type="button" class="back_btn">Back</button></a>
-				<p><a href="forget-password.php">forgot password</a></p>
 			</div>
 		</form>
 	</div>
