@@ -71,7 +71,7 @@ if ($mysqli->connect_errno) {
     exit(-1);
 }
 // given profileid and album name
-$profile = $_GET['profileid'];
+$profile = 0;
 $albumname = $_GET['albumname'];
 
 // we want to get the associated image paths from the db
