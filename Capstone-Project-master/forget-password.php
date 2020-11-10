@@ -89,7 +89,7 @@
 				<input type="text" placeholder="Enter Email" name="email" required>
 				<label><b>Username</b></label>
 				<input type="text" placeholder="Enter Username" name="username" required>
-				<button class="resetpassword_button" name="resetpass" type="submit"> Reset Password</button>
+				<button class="resetpas_button" name="resetpass" type="submit"> Reset Password</button>
 				<a href="frontpage.php"><button type="button" class="back_btn">Back</button></a>
 			</div>
 		</form>
