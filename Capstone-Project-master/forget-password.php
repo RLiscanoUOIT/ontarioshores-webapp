@@ -58,12 +58,12 @@
 					//take user to upload page
                     if($row['email']==$email)
                     {
-						echo '<script type="text/javascript">Username Verified. \n Password reset email sent.</script>';
+						echo '<script type="text/javascript">alert("Username Verified. \n Password reset email sent.)</script>';
 					}
 					elseif ($row['username']==$username)
 					{
 						//in case theres no permissions attatched
-                        echo '<script type="text/javascript">Username Verified. \n Password reset email sent.</script>';
+                        echo '<script type="text/javascript">alert("Username Verified. \n Password reset email sent.)</script>';
 					}
 
 				}

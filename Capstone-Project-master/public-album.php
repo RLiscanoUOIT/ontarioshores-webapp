@@ -12,7 +12,7 @@ if($_SESSION['login']!="1"){
 <?php
 //get patient name and info from db
     $connect = mysqli_connect("us-cdbr-iron-east-04.cleardb.net", "bc9da719e482f3", "deea7ef6", "heroku_dbefbfd5b04ac35");
-    $profile = $_GET['uid'];
+    $profile = 0;
     $query = "SELECT * FROM patient WHERE id='$profile'";
     $result = mysqli_query($connect, $query);
     $value = mysqli_fetch_assoc($result);
