@@ -84,9 +84,9 @@ if($stmt == FALSE) {
     exit(-2);
 }
 
-$stmt->bind_param('is', $profile, $albumname,);
+$stmt->bind_param('is', $profile, $albumname);
 $stmt->execute();
-$stmt->bind_result($id, $url,$type);
+$stmt->bind_result($id, $url, $type);
 
 $ids = [];
 $urls = [];
