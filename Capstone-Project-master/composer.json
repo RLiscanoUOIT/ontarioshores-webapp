@@ -7,5 +7,6 @@
         "php-http/message": "^1.9",
         "php-http/curl-client": "^2.1",
         "guzzlehttp/psr7": "^1.7"
-    }
+    },
+    "minimum-stability": "beta"
 }
