@@ -117,7 +117,7 @@ if($_SESSION['login']!="1"){
                               <tbody>
                               <?php 
 				      //searchs for all patients in db
-				      $ret=mysqli_query($con,"select * from patient");
+				      $ret=mysqli_query($con,"select * from patient WHERE id!='0'");
 							  $cnt=1;
 				      //loops through every patient found
 							  while($row=mysqli_fetch_array($ret))
