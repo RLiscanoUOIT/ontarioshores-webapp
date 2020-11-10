@@ -2,7 +2,7 @@
 	session_start();
     require_once('dbconfig/config.php');
     
-    $to = "angela.tabafunda@ontariotechu.net";
+    $to = "gelanrie@gmail.com";
     $subject = "My subject";
     $txt = "Hello world!";
     $headers = "From: webmaster@example.com" . "\r\n" .
@@ -20,7 +20,7 @@
 </head>
 <body style="background-color:#bdc3c7">
 	<div id="main-wrapper">
-	<center><h2>Welcome</h2></center>
+	<center><h3>Forgot your Password?</h3></center>
 			<div class="imgcontainer">
 				<img src="logo100.png" alt="Avatar" class="avatar">
 			</div>
@@ -85,11 +85,11 @@
 			}
 		?>
 			<div class="inner_container">
+				<label><b>Email</b></label>
+				<input type="text" placeholder="Enter Email" name="email" required>
 				<label><b>Username</b></label>
 				<input type="text" placeholder="Enter Username" name="username" required>
-				<label><b>Password</b></label>
-				<input type="password" placeholder="Enter Password" name="password" required>
-				<button class="login_button" name="login" type="submit">Login</button>
+				<button class="resetpassword_button" name="resetpass" type="submit"> Reset Password</button>
 				<a href="frontpage.php"><button type="button" class="back_btn">Back</button></a>
 			</div>
 		</form>

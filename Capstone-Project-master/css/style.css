@@ -53,6 +53,15 @@ input{
 	font-size:18px;
 	font-weight: bold;
 }
+.resetpassword_button {
+    background-color: #567DEB;
+    color: white;
+	margin-top:10px;
+    padding:10px;
+    width: 100%;
+	font-size:18px;
+	font-weight: bold;
+}
 .back_btn{
 	background-color: #3498db;
     color: white;
