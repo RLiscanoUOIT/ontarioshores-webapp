@@ -87,7 +87,7 @@ if($_SESSION['login']!="1"){
                         <h4>  <?php echo ucfirst($valuefname)." " .ucfirst($valuelname). "'s "; ?>Album Collection </h4>
                         <ul class="nav pull-right top-menu">
                         <li><a class="logout" href="#" style="margin-top:-35px";>View Profile</a></li>
-                        <li><a class="logout" href="update-files_staff.php?uid=<?php echo $profile?>" style="margin-top:-35px";>Upload Media</a></li>
+                        <li><a class="logout" href="../update-files_staff.php?uid=<?php echo $profile?>" style="margin-top:-35px";>Upload Media</a></li>
                         </ul>
                         <br>
                         <br>
