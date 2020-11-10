@@ -23,7 +23,11 @@ function emitCheckboxEntry($seqnumber, $url, $type)
     }
     else if($type=="video")
     {
-        $output .= "<img class='gallery' src='https://w7.pngwing.com/pngs/54/897/png-transparent-computer-icons-audio-file-format-wav-audio-miscellaneous-text-audio-file-format.png' />";
+        $output .= "<img class='gallery' src='' />";
+    }
+    else if($type=="audio")
+    {
+        $output .= "<i class='far fa-file-video'></i>";
     }
 	$output .= "</label>";
 	$output .= "</li>";
