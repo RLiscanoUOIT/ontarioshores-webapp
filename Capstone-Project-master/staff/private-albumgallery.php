@@ -4,11 +4,11 @@
 
 session_start(); 
 
-function after_last ($this, $inthat)
-    {
-        if (!is_bool(strrevpos($inthat, $this)))
-        return substr($inthat, strrevpos($inthat, $this)+strlen($this));
-    };
+function after_last ($h, $inthat)
+{
+    if (!is_bool(strrevpos($inthat, $h)))
+    return substr($inthat, strrevpos($inthat, $h)+strlen($h));
+};
 
 // function for the list items
 // sequence number -> url string -> html list item
