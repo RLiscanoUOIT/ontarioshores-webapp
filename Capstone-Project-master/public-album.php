@@ -80,13 +80,12 @@ if($_SESSION['login']!="1"){
       
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Public Albums</h3>
+          	<h3><i class="fa fa-angle-right"></i> Public Album Collection</h3>
 				<div class="row">
                   <div class="col-md-12">
                       <div class="content-panel">
-                        <h4>  <?php echo ucfirst($valuefname)." " .ucfirst($valuelname). "'s "; ?>Album Collection </h4>
                         <ul class="nav pull-right top-menu">
-                        <li><a class="logout" href="#" style="margin-top:-35px";>Upload Media</a></li>
+                        <li><a class="logout" href="../update-files_staff.php?uid=<?php echo $profile?>" style="margin-top:-35px";>Upload Media</a></li>
                         </ul>
                         <br>
                         <br>
