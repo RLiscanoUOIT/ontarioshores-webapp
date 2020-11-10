@@ -83,8 +83,10 @@ input{
 .reset_btn{
 	margin-top:10px;
 	color: white;
-	margin-bottom:15px;
-    padding: 10px;
+	margin:15px;
+	padding: 10px;
+	width: 100%;
+	font-weight: bold;
     background-color:  #3498db;
 }
 .logout_button{
