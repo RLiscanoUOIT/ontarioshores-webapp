@@ -9,6 +9,12 @@ function after_last ($h, $inthat)
     if (!is_bool(strrevpos($inthat, $h)))
     return substr($inthat, strrevpos($inthat, $h)+strlen($h));
 }
+function strrevpos($instr, $needle)
+{
+    $rev_pos = strpos (strrev($instr), strrev($needle));
+    if ($rev_pos===false) return false;
+    else return strlen($instr) - $rev_pos - strlen($needle);
+}
 
 // function for the list items
 // sequence number -> url string -> html list item
@@ -31,8 +37,8 @@ function emitCheckboxEntry($seqnumber, $url, $type)
     else if($type=="video")
     {
         $output .= "<i class='fa fa-file-video-o fa-5x'></i>";
-       // $fname = after_last ('/', $url);
-        $output .= "<br><h7 text-align: center;>".$url."</h7>";
+        $fname = after_last ('/', $url);
+        $output .= "<br><h7 text-align: center;>".$fname."</h7>";
     }
     else if($type=="audio")
     {
