@@ -37,10 +37,10 @@
 			if(isset($_POST['login']))
 			{
 				//gets username and password from input fields for a SQL query
+				@$email=$_POST['email'];
 				@$username=$_POST['username'];
-				@$password=$_POST['password'];
 				$caregiver=1;
-				$query = "select * from log_in where username='$username' and password='$password' ";
+				$query = "select * from log_in where email='$email' and username='$username' ";
 				$query_run = mysqli_query($con,$query);
 				//if name and password exists, enter if statement
 				if($query_run)
@@ -50,32 +50,23 @@
 					{
 					$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
 					//assign session values
-					$_SESSION['username'] = $username;
+					$_SESSION['email'] = $email;
 					$_SESSION['password'] = $password;
 					$_SESSION['login'] = "1";
 					//$_SESSION['pid'] = $row['patientid'];
 					
 					//take user to upload page
-					if($row['caregiver']==1){
-						$_SESSION['pid'] = $row['patientid'];
-						header( "Location: upload.php");
-						echo '<script type="text/javascript">alert("Database Worked")</script>';
+                    if($row['email']==$email)
+                    {
+						echo '<script type="text/javascript">Username Verified. \n Password reset email sent.</script>';
 					}
-					else if($row['admin']==1){
-						header( "Location: admin/manage-patients.php");
-						echo '<script type="text/javascript">alert("Database Worked")</script>';
-					}else if($row['staff']==1){
-						header( "Location: staff/manage-patients.php");
-						echo '<script type="text/javascript">alert("Database Worked")</script>';
-					}
-					else
+					elseif ($row['username']==$username)
 					{
 						//in case theres no permissions attatched
-						echo '<script type="text/javascript">alert("User does not have any permissions.")</script>';
+                        echo '<script type="text/javascript">Username Verified. \n Password reset email sent.</script>';
 					}
 
 				}
-
 					else
 					{
 						//in case of incorrect credentials

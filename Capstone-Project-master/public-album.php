@@ -85,7 +85,7 @@ if($_SESSION['login']!="1"){
                   <div class="col-md-12">
                       <div class="content-panel">
                         <ul class="nav pull-right top-menu">
-                        <li><a class="logout" href="../update-files_staff.php?uid=<?php echo $profile?>" style="margin-top:-35px";>Upload Media</a></li>
+                        <li><a class="logout" href="update-files_staff.php?uid=<?php echo $profile?>" style="margin-top:-35px";>Upload Media</a></li>
                         </ul>
                         <br>
                         <br>
