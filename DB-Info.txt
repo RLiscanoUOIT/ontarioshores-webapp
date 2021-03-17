@@ -1,0 +1,119 @@
+mysql://b020e96caefac7:859e2b3a@us-cdbr-east-03.cleardb.com/heroku_8c067b04afef356?reconnect=true\
+
+There are many places in the code where connections to the DB are requested. These have to searched and replaced by the infromation above
+
+Example of code like this is where the information is from a previous DB.
+
+$con=mysqli_connect ("us-cdbr-iron-east-04.cleardb.net", "bc9da719e482f3", "deea7ef6") or die ('I cannot connect to the database because: ' . mysql_error());
+mysqli_select_db ($con,'heroku_dbefbfd5b04ac35');
+
+Database schema - DDL
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `datejoined` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8
+CREATE TABLE `caregiver` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `patientid` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `patientkey_idx` (`patientid`),
+  CONSTRAINT `patientkey` FOREIGN KEY (`patientid`) REFERENCES `patient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+CREATE TABLE `log_in` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `date_joined` datetime NOT NULL,
+  `patientid` int(11) DEFAULT NULL,
+  `admin` tinyint(4) NOT NULL,
+  `staff` tinyint(4) NOT NULL,
+  `caregiver` tinyint(4) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `id_UNIQUE` (`user_id`),
+  KEY `patientid` (`patientid`)
+) ENGINE=InnoDB AUTO_INCREMENT=517 DEFAULT CHARSET=utf8
+CREATE TABLE `media` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` varchar(100) NOT NULL,
+  `patientid` int(11) NOT NULL,
+  `album` varchar(45) DEFAULT NULL,
+  `tags` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `patientkey_idx` (`patientid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+CREATE TABLE `new_media` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `patientid` int(11) NOT NULL,
+  `type` varchar(45) DEFAULT NULL,
+  `link` varchar(250) NOT NULL,
+  `album` varchar(45) DEFAULT NULL,
+  `tags` varchar(45) DEFAULT NULL,
+  `privacy` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `patientkey_idx` (`patientid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1173 DEFAULT CHARSET=utf8
+CREATE TABLE `patient` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `question1` varchar(150) DEFAULT NULL,
+  `answer1` varchar(150) DEFAULT NULL,
+  `question2` varchar(150) DEFAULT NULL,
+  `answer2` varchar(150) DEFAULT NULL,
+  `question3` varchar(150) DEFAULT NULL,
+  `answer3` varchar(150) DEFAULT NULL,
+  `question4` varchar(150) DEFAULT NULL,
+  `answer4` varchar(150) DEFAULT NULL,
+  `question5` varchar(150) DEFAULT NULL,
+  `answer5` varchar(150) DEFAULT NULL,
+  `question6` varchar(150) DEFAULT NULL,
+  `answer6` varchar(150) DEFAULT NULL,
+  `question7` varchar(150) DEFAULT NULL,
+  `answer7` varchar(150) DEFAULT NULL,
+  `question8` varchar(150) DEFAULT NULL,
+  `answer8` varchar(150) DEFAULT NULL,
+  `question9` varchar(150) DEFAULT NULL,
+  `answer9` varchar(150) DEFAULT NULL,
+  `question10` varchar(150) DEFAULT NULL,
+  `answer10` varchar(150) DEFAULT NULL,
+  `question11` varchar(150) DEFAULT NULL,
+  `answer11` varchar(150) DEFAULT NULL,
+  `question12` varchar(150) DEFAULT NULL,
+  `answer12` varchar(150) DEFAULT NULL,
+  `question13` varchar(150) DEFAULT NULL,
+  `answer13` varchar(150) DEFAULT NULL,
+  `question14` varchar(150) DEFAULT NULL,
+  `answer14` varchar(150) DEFAULT NULL,
+  `question15` varchar(150) DEFAULT NULL,
+  `answer15` varchar(150) DEFAULT NULL,
+  `datejoined` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=703 DEFAULT CHARSET=utf8
+CREATE TABLE `staff` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `datejoined` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=utf8
+
+
+
+
